@@ -37,7 +37,7 @@ function Hero() {
   return (
       <div className="slider relative bg-pink-900 grid grid-cols-1 md:grid-cols-2">
         <div className="slider-content  col-span-1 md:col-span-1">
-         <p className='text-3xl lg:w-[80vh] text-gray-700 uppercase font-custom1  absolute top-1/2 lg:left-1/4 lg:transform lg:-translate-x-1/4 lg:-translate-y-1/2 p-4'>{currentItem.text}</p>
+         <p className='text-3xl lg:w-[80vh] text-gray-300 shadow-md text-center uppercase font-custom1  absolute top-1/2 lg:left-1/4 lg:transform lg:-translate-x-1/4 lg:-translate-y-1/2 p-4'>{currentItem.text}</p>
         </div>
         <div className="slider-image col-span-1 md:col-span-1">
           <img className='w-full h-[100vh] object-contain' src={currentItem.image} alt={`Image ${currentIndex + 1}`} />
