@@ -35,7 +35,7 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <div className={`lg:flex ${isOpen ? "block" : "hidden"} mt-4 lg:mt-0 text-center font-custom`}>
+          <div className={`lg:flex ${isOpen ? "block" : "hidden"} mt-4 lg:mt-0 text-center font-custom1`}>
             <a
               href="#"
               className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"
