@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cart from "../Assets/shopping-bag.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,12 +37,12 @@ const Navbar = () => {
             </button>
           </div>
           <div className={`lg:flex ${isOpen ? "block" : "hidden"} mt-4 lg:mt-0 text-center font-custom1`}>
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"
             >
               Home
-            </a>
+            </Link>
             <a
               href="#"
               className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"

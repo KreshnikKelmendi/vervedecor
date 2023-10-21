@@ -11,3 +11,29 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+.bg-dhurata{
+    background-image: url(./Components/Assets/personalized.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-buqeta{
+    background-image: url(./Components/Assets/personalized2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-dekore{
+    background-image: url(./Components/Assets/decor3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-ditelindje{
+    background-image: url(./Components/Assets/decor4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

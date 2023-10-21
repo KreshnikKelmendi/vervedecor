@@ -36,18 +36,17 @@ function Hero() {
   }, [currentIndex, nextItem]);
 
 
-
   return (
     <div className="slider relative bg-red-500 grid grid-cols-1 md:grid-cols-2">
-    <div className="slider-content my-20 col-span-1 md:col-span-1 flex flex-col justify-center items-center">
-      <p className="text-3xl text-white text-center font-custom1">
-        {currentItem.text}
-      </p>
-      <button className="mt-4 font-custom1 shadow-xl text-center text-white hover:bg-red-600 rounded-full py-2 px-4 relative flex items-center">
-         Latest Collection
-      <ArrowRightIcon className="h-5 w-5 ml-2 text-white" />
-      </button>
-    </div>
+      <div className="slider-content my-20 col-span-1 md:col-span-1 flex flex-col justify-center items-center">
+        <p className="text-3xl text-white text-center font-custom1">
+          {currentItem.text}
+        </p>
+        <button className="mt-4 font-custom1 shadow-xl text-center text-white hover:bg-red-600 rounded-full py-2 px-4 relative flex items-center">
+          Latest Collection
+        <ArrowRightIcon className="h-5 w-5 ml-2 text-white" />
+        </button>
+      </div>
     <div className="slider-image col-span-1 md:col-span-1">
       <img className="w-full h-[25vh] lg:h-[100vh] object-contain" src={currentItem.image} alt="" />
     </div>
