@@ -1,9 +1,10 @@
 import React from 'react';
+import SecondAbout from './SecondAbout';
 
 const About = () => {
   return (
     <>
-    <div className='text-3xl py-10 text-center font-custom1 justify-center align-center'>
+    <div className='text-3xl my-5 text-center font-custom1 justify-center align-center'>
          <h3>Sjellim elegancën dhe magjinë në ditën tuaj të veçantë.</h3>
     </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center justify-center font-custom1 p-4">
@@ -20,6 +21,7 @@ const About = () => {
                 <p className='bg-white text-black py-3 px-8'>Ditëlindje</p>
             </div>
     </div>
+    <SecondAbout />
   </>
   )
 }
