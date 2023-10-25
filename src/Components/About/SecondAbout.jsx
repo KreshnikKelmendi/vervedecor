@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Image1 from '../Assets/helium.png';
-import Image2 from '../Assets/helium1.jpg';
-import Image3 from '../Assets/helium3.jpg';
+import Image1 from '../Assets/thirdSlide.png';
+import Image2 from '../Assets/fourthSlide.png';
+import Image3 from '../Assets/secondSlide.png';
 
 const images = [Image1, Image2, Image3];
 
@@ -32,13 +32,13 @@ const Carousel = () => {
   }, [nextImage]);
 
   return (
-    <div className="flex flex-col md:flex-row w-full p-4 md:p-20 text-center">
+    <div className="flex flex-col md:flex-row w-full p-6 bg-red-300 mt-10 md:p-20 text-center">
       <div className="w-full md:w-1/2">
         <div className="relative">
           <img
             src={images[currentImage]}
             alt=""
-            className="w-full h-[50vh] rounded-lg object-cover transition-transform transform-gpu scale-105 duration-300"
+            className="w-full h-[60vh] object-contain transition-transform transform-gpu scale-105 duration-300"
           />
           <div className="hidden absolute inset-0 items-center justify-between">
             <button
@@ -60,7 +60,7 @@ const Carousel = () => {
             <li key={index}>
               <button
                 onClick={() => selectImage(index)}
-                className={`w-3 h-3 rounded-full bg-gray-600 hover:bg-gray-800 focus:outline-none ${
+                className={`w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-800 focus:outline-none ${
                   index === currentImage ? 'bg-red-500' : ''
                 }`}
               />
@@ -68,15 +68,22 @@ const Carousel = () => {
           ))}
         </ul>
       </div>
-      <div className="w-full md:w-1/2 text-left p-4">
-        <h3 className="text-3xl md:text-3xl mb-4 font-custom1">Your Title</h3>
-        <p className="text-gray-700 font-custom">
-          Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit.
-        </p>
-      </div>
+      <div className="w-full md:w-1/2 text-center flex flex-col justify-center items-center p-4 lg:px-20">
+  <h3 className="text-3xl md:text-3xl mb-4 font-custom1">Your Title</h3>
+  <p className="font-custom">
+    Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit.Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit.
+  </p>
+  <button className=' bg-red-400 hover:bg-gray-400 px-10 py-1 my-5 rounded-xl text-white font-custom1'>SEE MORE</button>
+</div>
     </div>
   );
 };
 
 export default Carousel;
+
+
+
+
