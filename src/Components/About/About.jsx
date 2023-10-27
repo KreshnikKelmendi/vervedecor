@@ -1,6 +1,7 @@
 import React from 'react';
 import SecondAbout from './SecondAbout';
 import ThirdAbout from './ThirdAbout';
+import Latest from '../Products/Latest';
 
 const About = () => {
   return (
@@ -22,9 +23,9 @@ const About = () => {
                 <p className='bg-white text-black py-3 px-8'>Ditëlindje</p>
             </div>
     </div>
-    <SecondAbout />
+    <Latest />
     <ThirdAbout />
-   
+    <SecondAbout />
   </>
   )
 }
