@@ -23,7 +23,7 @@ function Hero() {
         autoPlay
         loop
         playsInline
-        className="w-full h-full object-cover mt-4"
+        className="w-full h-full object-cover "
       />
       <button onClick={toggleMute} className="absolute voice-toggle-button top-[45vh] lg:top-[65vh]">
         {isMuted ? (
