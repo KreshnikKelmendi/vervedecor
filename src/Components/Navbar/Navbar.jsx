@@ -41,7 +41,7 @@ const Navbar = () => {
               to="/"
               className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"
             >
-              Home
+              Ballina
             </Link>
             <a
               href="#"
