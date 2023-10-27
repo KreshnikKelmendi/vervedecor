@@ -24,6 +24,7 @@ const About = () => {
     </div>
     <SecondAbout />
     <ThirdAbout />
+   
   </>
   )
 }
