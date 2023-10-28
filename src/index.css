@@ -37,6 +37,27 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+.bg-eventDesign{
+    background-image: url(./Components/Assets/event-design.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@keyframes moveLeftRight {
+    0%, 100% {
+      transform: translateX(0); /* Fillim dhe përfundim: pa lëvizje */
+    }
+    50% {
+      transform: translateX(10%); /* Lëviz majtas */
+    }
+  }
+  
+  .moving-text {
+    animation: moveLeftRight 5s linear infinite; /* Animacioni më i ngadalshëm */
+    white-space: nowrap;
+    width: fit-content /* Gjerësia e dyfishuar e dritares për të lëvizur në të dy anët */
+  }
   
   
   

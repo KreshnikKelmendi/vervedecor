@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import video1 from "../Assets/video1.MP4";
-import soundOffIcon from "../Assets/soundoff.png";
-import soundOnIcon from "../Assets/soundon.png";
+import soundOffIcon from "../Assets/volumeOff.png";
+import soundOnIcon from "../Assets/volume.png";
 
 function Hero() {
   const [isMuted, setIsMuted] = useState(true); // Start with sound off
@@ -25,7 +25,7 @@ function Hero() {
         playsInline
         className="w-full h-full object-cover "
       />
-      <button onClick={toggleMute} className="absolute voice-toggle-button top-[45vh] lg:top-[65vh]">
+      <button onClick={toggleMute} className="absolute voice-toggle-button top-[45vh] left-[5px] lg:top-[65vh]">
         {isMuted ? (
           <img
             src={soundOffIcon}

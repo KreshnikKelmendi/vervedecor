@@ -57,9 +57,9 @@ const Latest = () => {
 
   function calculateSlidesPerPage() {
     if (window.innerWidth < 768) {
-      return 1; // On mobile screens, show 1 product per slide
+      return 1; 
     } else {
-      return 3; // On larger screens, show 3 products per slide
+      return 4; 
     }
   }
 
@@ -103,12 +103,14 @@ const Latest = () => {
   }, [nextSlide]);
 
   return (
-    <div className="bg-red-300 mt-16 py-12">
+    <div className="bg-neutral-50 mt-16 py-12">
       <div className="container mx-auto relative">
-        <div className='flex justify-between items-center p-5'>
+      <div className='flex justify-between items-center p-5'>
+        <div className="h-[1px] bg-red-300 flex-grow mr-4"></div>
           <p className='text-3xl font-custom1'>Produktet e fundit</p>
-          <p className="font-custom1 text-sm bg-red-500 hover:bg-gray-400 cursor-pointer text-white py-1 px-2 rounded-full focus:outline-none focus:ring focus:ring-blue-300">Shiko të gjitha</p>
-        </div>
+        <div className="h-[1px] bg-red-300 flex-grow ml-4"></div> 
+      </div>
+
         <button
           onClick={prevSlide}
           className="absolute left-0 top-1/2 transform -translate-y-1/2 shadow-lg p-2 rounded-full z-10"
