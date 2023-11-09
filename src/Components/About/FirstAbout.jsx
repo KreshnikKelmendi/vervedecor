@@ -26,9 +26,13 @@ const FirstAbout = () => {
   ];
 
   return (
-    <div className="bg-gray-100 py-10 px-5">
+    <div className="py-20 px-5">
       <div className="mx-auto text-center">
-        <h2 className="text-3xl font-custom1 mb-5">What Our Clients Say</h2>
+      <div className='flex justify-between items-center'>
+        <div className="h-[1px] bg-red-300 flex-grow mr-4"></div>
+          <p className='text-3xl font-custom1'>fjala e klientëve</p>
+        <div className="h-[1px] bg-red-300 flex-grow ml-4"></div> 
+      </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="bg-white p-4 rounded-lg shadow-md">

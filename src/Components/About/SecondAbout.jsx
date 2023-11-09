@@ -32,7 +32,7 @@ const Carousel = () => {
   }, [nextImage]);
 
   return (
-    <div className="flex flex-col md:flex-row w-full p-6 bg-red-300 mt-16 md:p-20 text-center">
+    <div className="flex flex-col md:flex-row w-full p-6 bg-slate-50 mt-16 md:p-20 text-center">
       <div className="w-full md:w-1/2">
         <div className="relative">
           <img

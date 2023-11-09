@@ -10,9 +10,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white-900 p-4">
+    <nav className="p-4">
       <div className="mx-auto flex justify-between items-center">
-        <div className="text-black font-bold font-custom text-2xl">My website</div>
+        <div className="text-black font-bold font-custom text-2xl"><Link to="/">My website</Link></div>
         <div className="text-right"> 
           <div className="lg:hidden">
             <button
@@ -43,12 +43,12 @@ const Navbar = () => {
             >
               Ballina
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/about"
               className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"
             >
-              About
-            </a>
+              Për ne
+            </Link>
             <a
               href="#"
               className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"

@@ -43,13 +43,31 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+.bg-contentOne{
+    background-image: url(./Components/Assets/wall.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-content{
+    background-image: url(./Components/Assets/contentOne.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg-myWebsite{
+    background-image: url(./Components//Assets/decorative-heart.jpg);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 @keyframes moveLeftRight {
     0%, 100% {
-      transform: translateX(0); /* Fillim dhe përfundim: pa lëvizje */
+      transform: translateX(0); 
     }
     50% {
-      transform: translateX(10%); /* Lëviz majtas */
+      transform: translateX(10%);
     }
   }
   

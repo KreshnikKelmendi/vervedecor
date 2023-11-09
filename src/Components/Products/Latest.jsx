@@ -53,7 +53,7 @@ const Latest = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesPerPage, setSlidesPerPage] = useState(calculateSlidesPerPage());
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const autoplayInterval = 5000; // Autoplay interval in milliseconds (adjust as needed)
+  const autoplayInterval = 5000;
 
   function calculateSlidesPerPage() {
     if (window.innerWidth < 768) {
@@ -88,7 +88,7 @@ const Latest = () => {
       setSlidesPerPage(calculateSlidesPerPage());
     }
   
-    handleResize(); // Initial calculation
+    handleResize();
     window.addEventListener('resize', handleResize);
   
     // Autoplay functionality
@@ -98,7 +98,7 @@ const Latest = () => {
   
     return () => {
       window.removeEventListener('resize', handleResize);
-      clearInterval(autoplay); // Clear the interval to stop autoplay when the component unmounts
+      clearInterval(autoplay);
     };
   }, [nextSlide]);
 
@@ -113,14 +113,14 @@ const Latest = () => {
 
         <button
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 shadow-lg p-2 rounded-full z-10"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 z-10"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
             height="30"
             viewBox="0 0 30 30"
-            fill="none"
+            fill="black"
             stroke="pink"
             strokeWidth="2"
             strokeLinecap="round"
@@ -131,14 +131,14 @@ const Latest = () => {
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 shadow-lg p-2 rounded-full z-10"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 z-10"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="30"
             height="30"
             viewBox="0 0 30 30"
-            fill="none"
+            fill="black"
             stroke="pink"
             strokeWidth="2"
             strokeLinecap="round"
@@ -154,7 +154,7 @@ const Latest = () => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-[45vh] h-80 object-cover mx-auto block mb-4  cursor-pointer"
+          className="w-[45vh] h-60 object-cover mx-auto block mb-4 cursor-pointer"
           onClick={() => selectProduct(product)}
         />
         <h2 className="text-xl font-custom1 text-gray-800">{product.name}</h2>
