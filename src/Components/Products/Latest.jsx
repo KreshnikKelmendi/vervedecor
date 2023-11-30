@@ -107,7 +107,7 @@ const Latest = () => {
       <div className="container mx-auto relative">
       <div className='flex justify-between items-center p-5'>
         <div className="h-[1px] bg-red-300 flex-grow mr-4"></div>
-          <p className='text-3xl font-custom1'>Produktet e fundit</p>
+          <p className='text-2xl font-custom uppercase'>Produktet e fundit</p>
         <div className="h-[1px] bg-red-300 flex-grow ml-4"></div> 
       </div>
 
@@ -160,13 +160,21 @@ const Latest = () => {
         <h2 className="text-xl font-custom1 text-gray-800">{product.name}</h2>
         {/* <p className="text-gray-600 font-custom mb-4">{product.description}</p> */}
         <p className="text-xl font-custom text-gray-800">${product.price}</p>
-        <button className= "bg-red-400 hover:bg-gray-400 px-10 py-1 my-5 rounded-xl text-white font-custom1">
+        <button className= "bg-red-400 hover:bg-gray-400 px-10 py-1 my-5 rounded-xl text-white font-custom">
           Buy Now
         </button>
       </div>
     </div>
   ))}
 </div>
+<div className="flex justify-center mt-8">
+          <button
+            className="bg-red-400 hover:bg-gray-400 text-white font-custom py-2 px-14 rounded-xl focus:outline-none focus:ring focus:ring-blue-300"
+            
+          >
+            Shiko te gjitha
+          </button>
+        </div>
 
       </div>
       {selectedProduct && (

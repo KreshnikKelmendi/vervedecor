@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ContentOne = () => {
+  
   return (
     <>
     <div className='bg-content h-[45vh]'></div>
@@ -12,13 +13,11 @@ const ContentOne = () => {
           trajnuara, të cilat i adhurojnë lulet dhe ky përkushtim reflekton në çdo punim që bëjmë.
       </div>
 
-      <div className='p-16 sm:p-28 mb-16 bg-myWebsite items-center'>
-        <div className='flex flex-col sm:flex-row justify-between items-center font-custom1'>
-          <p className="text-center sm:text-left text-2xl sm:text-4xl text-black">My website</p>
-          <p className="text-center sm:text-right text-base sm:text-xl text-zinc-700">Lorem ipsum dolor sit amet</p>
+      <div className='p-16 sm:p-28 mb-16 bg-myWebsite'>
+        <div className=' text-center font-custom'>
+          <p className="text-center sm:text-2xl text-gray-900 font-bold uppercase">Zbukuroni ngjarjet e rëndësishme në jetën tuaj!</p>
         </div>
       </div>
-
    
     </>
   )

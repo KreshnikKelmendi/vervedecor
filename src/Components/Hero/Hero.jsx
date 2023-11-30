@@ -25,7 +25,7 @@ function Hero() {
         playsInline
         className="w-full h-full object-cover "
       />
-      <button onClick={toggleMute} className="absolute voice-toggle-button top-[45vh] left-[5px] lg:top-[65vh]">
+      <button onClick={toggleMute} className="absolute voice-toggle-button top-[45vh] left-[15px] lg:top-[65vh]">
         {isMuted ? (
           <img
             src={soundOffIcon}

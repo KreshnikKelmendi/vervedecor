@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="p-4">
       <div className="mx-auto flex justify-between items-center">
         <div className="text-black font-bold font-custom text-2xl"><Link to="/">My website</Link></div>
-        <div className="text-right"> 
+        <div className="text-right uppercase"> 
           <div className="lg:hidden">
             <button
               onClick={toggleNavbar}
@@ -36,7 +36,7 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <div className={`lg:flex ${isOpen ? "block" : "hidden"} mt-4 lg:mt-0 text-center font-custom1`}>
+          <div className={`lg:flex ${isOpen ? "block" : "hidden"} mt-4 lg:mt-0 text-center `}>
             <Link
               to="/"
               className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"
@@ -49,22 +49,21 @@ const Navbar = () => {
             >
               Për ne
             </Link>
+            <Link
+              to="/products"
+              className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"
+            >
+              Produktet
+            </Link>
             <a
               href="#"
               className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"
             >
-              Services
-            </a>
-            <a
-              href="#"
-              className="text-black hover:text-gray-300 px-4 py-2 block lg:inline"
-            >
-              Contact
+              Kontakti
             </a>
             <div className="flex">
-                <button className="text-black border border-gray-300 px-10 rounded-full hover:bg-green-600">Login</button>
                 <img className="h-10 px-5" src={cart} alt="cartIcon" />
-                <div className="flex ml-[-35px] bg-blue-800 w-[22px] h-[22px] justify-center items-center text-white text-center rounded-full text-[2vh]">
+                <div className="flex ml-[-35px] bg-blue-800 w-[28px] h-[22px] justify-center items-center text-white text-center rounded-full text-[2vh]">
                     0
                 </div>
           </div>

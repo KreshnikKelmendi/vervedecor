@@ -1,12 +1,12 @@
 @font-face {
     font-family: poppins;
-    src: url(../public/fonts/Poppins-Light.ttf);
+    src: url(../public/fonts/Fahkwang-Light.ttf);
 }
 
-@font-face {
+/* @font-face {
     font-family: foregen;
     src: url(../public/fonts/the-foregen-rough-one.regular.ttf);
-}
+} */
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -75,6 +75,26 @@
     animation: moveLeftRight 5s linear infinite; /* Animacioni më i ngadalshëm */
     white-space: nowrap;
     width: fit-content /* Gjerësia e dyfishuar e dritares për të lëvizur në të dy anët */
+  }
+
+  .messenger-container {
+    position: relative;
+  }
+  
+  .tooltip {
+    display: none;
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .messenger-icon:hover + .tooltip {
+    display: block;
   }
   
   
