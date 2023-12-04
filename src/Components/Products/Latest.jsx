@@ -113,7 +113,7 @@ const Latest = () => {
         <h2 className="text-xl font-custom1 text-gray-800">{product.name}</h2>
         {/* <p className="text-gray-600 font-custom mb-4">{product.description}</p> */}
         <p className="text-xl font-custom text-gray-800">{product.price} €</p>
-        <Link to={`/products/${product.id}`}>
+        <Link to={`/products/${product.id}`} onClick={window.scrollTo({ top: 0, behavior: 'auto' })}>
         <button className= "bg-red-400 hover:bg-gray-400 px-10 py-1 my-5 rounded-xl text-white font-custom">
           Shiko produktin
         </button>
@@ -123,12 +123,14 @@ const Latest = () => {
   ))}
 </div>
 <div className="flex justify-center mt-8">
-          <button
-            className="bg-red-400 hover:bg-gray-400 text-white font-custom py-2 px-14 rounded-xl focus:outline-none focus:ring focus:ring-blue-300"
-            
-          >
-            Shiko te gjitha
-          </button>
+          <Link to="/products" onClick={window.scrollTo({ top: 0, behavior: 'auto' })}>
+            <button
+              className="hover:bg-gray-400 text-black font-custom py-2 px-14 rounded-xl focus:outline-none focus:ring focus:ring-blue-300"
+              
+            >
+              Shiko te gjitha
+            </button>
+          </Link>
         </div>
 
       </div>
