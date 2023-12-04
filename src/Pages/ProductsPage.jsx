@@ -64,7 +64,7 @@ const ProductsPage = () => {
                 <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
                 <p className="text-gray-700 mb-4">{product.price.toFixed(2)} €</p>
                 <Link to={`/products/${product.id}`} 
-                      onClick={window.scrollTo({ top: 0, behavior: 'auto' })}>
+                      onClick={window.scrollTo({ top: 0 })}>
                     <button className="bg-red-500 text-white px-2 py-2 rounded hover:bg-red-700 transition duration-300">
                        Shiko produktin
                     </button>
