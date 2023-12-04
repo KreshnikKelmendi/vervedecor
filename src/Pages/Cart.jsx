@@ -67,7 +67,7 @@ const Cart = ({ isOpenCart, toggleNavbar }) => {
             {showCheckoutButton && (
               <>
                 {/* Use Link to navigate to the checkout route */}
-                <Link
+                <Link onClick={window.scrollTo({ top: 0, behavior: 'auto' })}
                   to="/checkout"
                   className="mt-4 mx-3 lg:mx-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
                 >
