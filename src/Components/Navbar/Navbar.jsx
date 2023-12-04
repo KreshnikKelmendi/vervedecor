@@ -78,7 +78,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Links (Centered) */}
       <div
-        className={`lg:hidden ${isOpen ? "block" : "hidden"} mt-4 text-center`}
+        className={`lg:hidden ${isOpen ? "block" : "hidden"} mt-4 text-center uppercase`}
       >
         <Link to="/" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
           Ballina
