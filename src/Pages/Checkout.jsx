@@ -78,7 +78,6 @@ const { cartState, clearCart } = useCart();
       clearCart();
 
       // navigate('/');
-      // window.scrollTo({ top: 0, behavior: 'auto' });
     } catch (error) {
       console.error('Error sending email:', error);
     }
