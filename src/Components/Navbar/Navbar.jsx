@@ -46,7 +46,7 @@ const Navbar = () => {
 
         {/* Title and Navigation Links */}
         <div className="text-black font-bold text-2xl lg:text-3xl flex-grow text-center lg:text-left">
-          <Link to="/">My Website</Link>  
+          <Link to="/">VERVE Decor</Link>  
         </div>
           {/* Navigation Links for Large Screens */}
           <div className="hidden lg:flex lg:items-center justify-center uppercase space-x-12 ml-auto">
@@ -80,16 +80,16 @@ const Navbar = () => {
       <div
         className={`lg:hidden ${isOpen ? "block" : "hidden"} mt-4 text-center`}
       >
-        <Link to="/" className="text-black hover:text-gray-300 block py-2">
+        <Link to="/" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
           Ballina
         </Link>
-        <Link to="/about" className="text-black hover:text-gray-300 block py-2">
+        <Link to="/about" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
           Për ne
         </Link>
-        <Link to="/products" className="text-black hover:text-gray-300 block py-2">
+        <Link to="/products" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
           Produktet
         </Link>
-        <Link to="/contact" className="text-black hover:text-gray-300 block py-2">
+        <Link to="/contact" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
           Kontakti
         </Link>
       </div>

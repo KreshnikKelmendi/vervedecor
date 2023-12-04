@@ -1,7 +1,6 @@
-// Cart.js
 import React, { useState } from 'react';
 import { useCart } from './CartContext';
-import Checkout from './Checkout'; // Import the Checkout component
+import Checkout from './Checkout';
 import { Link } from 'react-router-dom';
 
 const RecycleBinIcon = () => (
