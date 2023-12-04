@@ -17,6 +17,11 @@ const Navbar = () => {
     setIsOpenCart(!isOpenCart);
   };
 
+  const preventDefault = (e) => {
+    e.preventDefault();
+    toggleNavbar(); // Close the navbar on link click
+  };
+
   return (
     <nav className=" p-4 bg-neutral-100">
       <div className="container mx-auto flex justify-between items-center">
@@ -80,16 +85,16 @@ const Navbar = () => {
       <div
         className={`lg:hidden ${isOpen ? "block" : "hidden"} mt-4 text-center uppercase`}
       >
-        <Link to="/" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
+        <Link to="/" onClick={preventDefault} className="text-black hover:text-gray-300 block py-2">
           Ballina
         </Link>
-        <Link to="/about" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
+        <Link to="/about" onClick={preventDefault} className="text-black hover:text-gray-300 block py-2">
           Për ne
         </Link>
-        <Link to="/products" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
+        <Link to="/products" onClick={preventDefault} className="text-black hover:text-gray-300 block py-2">
           Produktet
         </Link>
-        <Link to="/contact" onClick={toggleNavbar} className="text-black hover:text-gray-300 block py-2">
+        <Link to="/contact" onClick={preventDefault} className="text-black hover:text-gray-300 block py-2">
           Kontakti
         </Link>
       </div>
