@@ -1,79 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import product1 from "../Assets/helium.png";
-import product2 from "../Assets/decor3.jpg";
-import product3 from "../Assets/decor4.jpg";
-import product4 from "../Assets/helium3.jpg";
-
-const products = [
-  {
-    id: 1,
-    name: 'Product 1',
-    description: 'Description for Product 1',
-    image: product1,
-    price: 99.99,
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    description: 'Description for Product 2',
-    image: product2,
-    price: 79.99,
-  },
-  {
-    id: 3,
-    name: 'Product 3',
-    description: 'Description for Product 3',
-    image: product3,
-    price: 119.99,
-  },
-  {
-    id: 4,
-    name: 'Product 4',
-    description: 'Description for Product 4',
-    image: product4,
-    price: 139.99,
-  },
-  {
-    id: 5,
-    name: 'Product 5',
-    description: 'Description for Product 5',
-    image: product4,
-    price: 99.99,
-  },
-  {
-    id: 6,
-    name: 'Product 6',
-    description: 'Description for Product 6',
-    image: product4,
-    price: 79.99,
-  },
-];
+import { data } from '../data/data';
+import { Link } from 'react-router-dom';
 
 const Latest = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesPerPage, setSlidesPerPage] = useState(calculateSlidesPerPage());
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const autoplayInterval = 5000;
+  const autoplayInterval = 4000;
 
   function calculateSlidesPerPage() {
     if (window.innerWidth < 768) {
       return 1; 
     } else {
-      return 4; 
+      return 3; 
     }
   }
 
   const nextSlide = () => {
     const next = currentSlide + slidesPerPage;
-    setCurrentSlide(next >= products.length ? 0 : next);
+    setCurrentSlide(next >= data.length ? 0 : next);
   };
 
   const prevSlide = () => {
     let prev = currentSlide - slidesPerPage;
     if (prev < 0) {
-      prev = products.length - (products.length % slidesPerPage);
-      if (prev === products.length) {
-        prev = products.length - slidesPerPage;
+      prev = data.length - (data.length % slidesPerPage);
+      if (prev === data.length) {
+        prev = data.length - slidesPerPage;
       }
     }
     setCurrentSlide(prev);
@@ -148,7 +101,7 @@ const Latest = () => {
           </svg>
         </button>
         <div className="flex overflow-hidden">
-  {products.slice(currentSlide, currentSlide + slidesPerPage).map((product) => (
+  {data.slice(currentSlide, currentSlide + slidesPerPage).map((product) => (
     <div key={product.id} className={`w-full ${window.innerWidth < 768 ? '' : 'md:w-1/2 lg:w-1/3'} px-4 justify-center text-center`}>
       <div className="rounded-lg p-6">
         <img
@@ -159,10 +112,12 @@ const Latest = () => {
         />
         <h2 className="text-xl font-custom1 text-gray-800">{product.name}</h2>
         {/* <p className="text-gray-600 font-custom mb-4">{product.description}</p> */}
-        <p className="text-xl font-custom text-gray-800">${product.price}</p>
+        <p className="text-xl font-custom text-gray-800">{product.price} €</p>
+        <Link to={`/products/${product.id}`}>
         <button className= "bg-red-400 hover:bg-gray-400 px-10 py-1 my-5 rounded-xl text-white font-custom">
-          Buy Now
+          Shiko produktin
         </button>
+        </Link>
       </div>
     </div>
   ))}

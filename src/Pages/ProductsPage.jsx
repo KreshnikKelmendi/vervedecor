@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
-import product1 from "../Components/Assets/helium1.jpg"
-import product2 from "../Components/Assets/helium.png"
-import product3 from "../Components/Assets/luxury-wedding-ceremony.jpg"
+
 import { Link } from 'react-router-dom';
+import { data } from '../Components/data/data';
 
 const ProductsPage = () => {
-  const initialProducts = [
-    { id: 1, name: 'Product 1', category: 'Buqeta', price: 19.99, image: product1 },
-    { id: 2, name: 'Product 2', category: 'Buqeta', price: 29.99, image: product2 },
-    { id: 3, name: 'Product 3', category: 'Other', price: 39.99, image: product3 },
-    { id: 4, name: 'Product 4', category: 'Other', price: 49.99, image: product1 },
-    // Add more products as needed
-  ];
+
 
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -20,37 +13,37 @@ const ProductsPage = () => {
   };
 
   const filteredProducts = selectedCategory
-    ? initialProducts.filter((product) => product.category === selectedCategory)
-    : initialProducts;
+    ? data.filter((product) => product.category === selectedCategory)
+    : data;
 
   return (
     <div className="bg-slate-50">
       <div className="pt-6">
-        <h2 className="text-2xl font-bold text-center font-custom">Our Products</h2>
-        <div className="flex justify-center mt-4 font-custom1">
+        <h2 className="text-2xl font-bold text-center font-custom">Produktet tona</h2>
+        <div className="flex flex-col lg:flex-row w-fit justify-center mx-auto mt-4 font-custom">
           <button
             onClick={() => handleCategoryClick(null)} 
-            className={`mx-2 px-4 py-2 rounded ${
-              selectedCategory === null ? 'bg-red-500 text-white' : 'bg-gray-300'
+            className={`mx-2 px-4 py-2 ${
+              selectedCategory === null ? 'border-b border-red-700' : ''
             }`}
           >
-            All
+            Të gjitha
           </button>
           <button
             onClick={() => handleCategoryClick('Buqeta')}
-            className={`mx-2 px-4 py-2 rounded ${
-              selectedCategory === 'Buqeta' ? 'bg-red-500 text-white' : 'bg-gray-300'
+            className={`mx-2 mt-3 lg:mt-0 px-4 py-2 ${
+              selectedCategory === 'Buqeta' ? 'border-b border-cyan-700' : ''
             }`}
           >
-            Buqeta
+            Dhurata të personalizuara
           </button>
           <button
             onClick={() => handleCategoryClick('Other')}
-            className={`mx-2 px-4 py-2 rounded ${
-              selectedCategory === 'Other' ? 'bg-red-500 text-white' : 'bg-gray-300'
+            className={`mx-2 px-4 mt-3 lg:mt-0 py-2 ${
+              selectedCategory === 'Other' ? 'border-b border-cyan-700' : ''
             }`}
           >
-            Other
+            Buqeta
           </button>
           {/* Add more buttons for other categories as needed */}
         </div>
@@ -64,14 +57,14 @@ const ProductsPage = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="rounded h-52 w-[100%] object-cover "
+                  className="rounded h-32 lg:h-52 w-[100%] object-cover "
                 />
               </div>
               <div className=''>
                 <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-                <p className="text-gray-700 mb-4">${product.price.toFixed(2)}</p>
+                <p className="text-gray-700 mb-4">{product.price.toFixed(2)} €</p>
                 <Link to={`/products/${product.id}`}>
-                    <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300">
+                    <button className="bg-red-500 text-white px-2 py-2 rounded hover:bg-red-700 transition duration-300">
                        Shiko produktin
                     </button>
                 </Link>
