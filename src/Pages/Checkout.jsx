@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from './CartContext';
 import emailjs from '@emailjs/browser';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Modal = ({ text, onClose }) => {
   useEffect(() => {
@@ -25,8 +25,7 @@ const Modal = ({ text, onClose }) => {
 };
 
 const Checkout = () => {
-  const { cartState } = useCart();
-  // const { clearCart } = useCart();
+  const { cartState, clearCart } = useCart();
   const [formData, setFormData] = useState({
     customerName: '',
     customerAddress: '',
@@ -38,7 +37,7 @@ const Checkout = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalText, setModalText] = useState('');
   
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -76,10 +75,10 @@ const Checkout = () => {
         orderedQuantities: '',
       });
 
-      // clearCart();
+      clearCart();
 
-      // navigate('/');
-      // window.scrollTo({ top: 0, behavior: 'auto' });
+      navigate('/');
+      window.scrollTo({ top: 0, behavior: 'auto' });
     } catch (error) {
       console.error('Error sending email:', error);
     }
