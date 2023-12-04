@@ -33,7 +33,7 @@ const Cart = ({ isOpenCart, toggleNavbar }) => {
 
   return (
     <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-50 ${isOpenCart ? 'block' : 'hidden'}`} onClick={toggleNavbar}>
-      <div className="absolute w-96 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded overflow-y-auto">
+      <div className="absolute w-[100%] lg:w-96 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded overflow-y-auto">
         <h2 className="text-2xl font-bold mb-4 text-center">Produktet në shportë</h2>
         {cartState.items.length === 0 ? (
           <p>Nuk ka produkte të shtuara në shportë.</p>
@@ -70,9 +70,9 @@ const Cart = ({ isOpenCart, toggleNavbar }) => {
                 {/* Use Link to navigate to the checkout route */}
                 <Link
                   to="/checkout"
-                  className="mt-4 mx-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                  className="mt-4 mx-3 lg:mx-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
                 >
-                  Vazhdo me porosinë
+                  Vazhdo me porosi
                 </Link>
                 {isCheckoutVisible && <Checkout />}
               </>
