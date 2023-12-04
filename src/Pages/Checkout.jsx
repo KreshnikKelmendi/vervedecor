@@ -25,7 +25,8 @@ const Modal = ({ text, onClose }) => {
 };
 
 const Checkout = () => {
-const { cartState, clearCart } = useCart();
+  const { cartState } = useCart();
+  // const { clearCart } = useCart();
   const [formData, setFormData] = useState({
     customerName: '',
     customerAddress: '',
@@ -75,9 +76,10 @@ const { cartState, clearCart } = useCart();
         orderedQuantities: '',
       });
 
-      clearCart();
+      // clearCart();
 
       // navigate('/');
+      // window.scrollTo({ top: 0, behavior: 'auto' });
     } catch (error) {
       console.error('Error sending email:', error);
     }
@@ -90,7 +92,7 @@ const { cartState, clearCart } = useCart();
         <div>
           <h3 className="text-l text-gray-300 font-semibold mb-4">Produktet e mia</h3>
           <ul>
-            {cartState.items.map((item, index) => (
+            {cartState?.items.map((item, index) => (
               <li key={index} className="flex items-center mb-4">
                 <img src={item.image} alt={`${item.name}`} className="w-32 h-20 object-cover mr-4 rounded-lg" />
                 <div>
