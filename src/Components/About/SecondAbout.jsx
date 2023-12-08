@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Image1 from '../Assets/thirdSlide.png';
-import Image2 from '../Assets/fourthSlide.png';
-import Image3 from '../Assets/secondSlide.png';
+import Image1 from '../Assets/contentOne.jpg';
+import Image2 from '../Assets/decorative-heart.jpg';
+import Image3 from '../Assets/helium11.png';
 
 const images = [Image1, Image2, Image3];
 
@@ -69,14 +69,14 @@ const Carousel = () => {
         </ul>
       </div>
       <div className="w-full md:w-1/2 text-center flex flex-col justify-center items-center p-4 lg:px-20">
-  <h3 className="text-3xl md:text-3xl mb-4 font-custom1">Your Title</h3>
-  <p className="font-custom">
+  <h3 className="text-3xl md:text-3xl mb-4">Your Title</h3>
+  <p className="">
     Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit. Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit.Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit.
   </p>
-  <button className=' bg-red-400 hover:bg-gray-400 px-10 py-1 my-5 rounded-xl text-white font-custom1'>SEE MORE</button>
+  <button className=' bg-red-500 hover:bg-gray-400 px-10 py-1 my-5 rounded-xl text-white'>SEE MORE</button>
 </div>
     </div>
   );

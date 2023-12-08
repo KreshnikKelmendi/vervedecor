@@ -1,7 +1,25 @@
+// Cart.js
 import React, { useState } from 'react';
 import { useCart } from './CartContext';
 import Checkout from './Checkout';
 import { Link } from 'react-router-dom';
+import trolley from "../Components/Assets/trolley.png"
+
+const EmptyCartIcon = () => (
+  <div className="text-center empty-cart-icon-container">
+    <img
+      src={trolley}
+      alt="Shopping Cart"
+      className="w-16 h-16 mx-auto mb-4 empty-cart-icon"
+    />
+    <p className="text-gray-600 mb-4">Shporta juaj është e zbrazur.</p>
+    <Link to="/products">
+      <button className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300">
+        Shfleto produkte
+      </button>
+    </Link>
+  </div>
+);
 
 const RecycleBinIcon = () => (
   <svg
@@ -16,7 +34,7 @@ const RecycleBinIcon = () => (
   </svg>
 );
 
-const Cart = ({ isOpenCart, toggleNavbar }) => {
+const Cart = () => {
   const { cartState, clearCart, removeFromCart } = useCart();
   const [isCheckoutVisible, setCheckoutVisible] = useState(false);
 
@@ -31,54 +49,57 @@ const Cart = ({ isOpenCart, toggleNavbar }) => {
   };
 
   return (
-    <div className={`fixed inset-0 bg-gray-800 bg-opacity-75 z-50 ${isOpenCart ? 'block' : 'hidden'}`} onClick={toggleNavbar}>
-      <div className="absolute w-[100%] lg:w-96 h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded overflow-y-auto">
-        <h2 className="text-2xl font-bold mb-4 text-center">Produktet në shportë</h2>
-        {cartState.items.length === 0 ? (
-          <p>Nuk ka produkte të shtuara në shportë.</p>
-        ) : (
-          <>
-            <ul>
-              {cartState.items.map((item, index) => (
-                <li key={index} className="flex items-center mb-4">
-                  <img src={item.image} alt={`${item.name}`} className="w-12 h-12 mr-4 rounded" />
-                  <div>
-                    <p className="font-bold">{item.name}</p>
-                    <p>
-                      {item.quantity} x {item.price ? item.price.toFixed(2) : 'N/A'} €
-                    </p>
-                    <button
-                      onClick={() => handleRemove(item.id)}
-                      className="text-red-500 hover:text-red-700 flex items-center"
-                    >
-                      <RecycleBinIcon />
-                      Fshije nga shporta
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <button
-              onClick={clearCart}
-              className="mt-4 mx-2 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300"
-            >
-              Fshij të gjitha
-            </button>
-            {showCheckoutButton && (
-              <>
-                {/* Use Link to navigate to the checkout route */}
-                <Link onClick={window.scrollTo({ top: 0 })}
-                  to="/checkout"
-                  className="mt-4 mx-3 lg:mx-4 bg-gray-700 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+    <div className="flex justify-center items-center py-32 lg:py-20">
+      {!isCheckoutVisible && (
+        <div className="w-full max-w-md p-6 bg-white rounded shadow-lg">
+          <h2 className="text-3xl mb-6 text-center uppercase">Produktet në shportë</h2>
+          {cartState.items.length === 0 ? (
+            <EmptyCartIcon />
+          ) : (
+            <>
+              <ul className="w-full divide-y divide-gray-200">
+                {cartState.items.map((item, index) => (
+                  <li key={index} className="flex items-center py-3">
+                    <img src={item.image} alt={`${item.name}`} className="w-16 h-16 mr-4 rounded object-cover" />
+                    <div className="flex-grow">
+                      <p className="text-lg font-semibold">{item.name}</p>
+                      <p className="text-sm text-gray-600">
+                        {item.quantity} x {item.price ? item.price.toFixed(2) : 'N/A'} €
+                      </p>
+                      <button
+                        onClick={() => handleRemove(item.id)}
+                        className="text-red-500 hover:text-red-700 flex items-center text-sm"
+                      >
+                        <RecycleBinIcon />
+                        Fshije nga shporta
+                      </button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div className="grid grid-cols-2 gap-x-2 mt-4">
+                <button
+                  onClick={clearCart}
+                  className="bg-red-500 w-full text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300"
                 >
-                  Vazhdo me porosi
-                </Link>
-                {isCheckoutVisible && <Checkout />}
-              </>
-            )}
-          </>
-        )}
-      </div>
+                  Fshij të gjitha
+                </button>
+                {showCheckoutButton && (
+                  <Link to="/checkout">
+                    <button
+                      onClick={handleProceedToCheckout}
+                      className="bg-red-500 w-full text-white px-4 py-2 rounded hover:bg-red-700 transition duration-300"
+                    >
+                      Vazhdo me porosi
+                    </button>
+                  </Link>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+      {isCheckoutVisible && <Checkout />}
     </div>
   );
 };

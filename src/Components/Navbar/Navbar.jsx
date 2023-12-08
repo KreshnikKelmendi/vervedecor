@@ -1,22 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../Pages/CartContext";
-import Cart from "../../Pages/Cart";
-import cart from "../Assets/shopping-bag.png";
+import cart from "../Assets/trolley.png";
 
 const Navbar = () => {
   const { cartState } = useCart();
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenCart, setIsOpenCart] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleCart = () => {
-    setIsOpenCart(!isOpenCart);
-  };
-  
 
   return (
     <nav className=" p-4 bg-neutral-100">
@@ -47,10 +41,10 @@ const Navbar = () => {
 
         {/* Title and Navigation Links */}
         <div className="text-black font-bold text-2xl lg:text-3xl flex-grow text-center lg:text-left">
-          <Link to="/">VERVE Decor</Link>  
+          <Link to="/">VERVE Décor</Link>  
         </div>
           {/* Navigation Links for Large Screens */}
-          <div className="hidden lg:flex lg:items-center justify-center uppercase space-x-12 ml-auto">
+          <div className="hidden font-semibold lg:flex lg:items-center justify-center uppercase space-x-12 ml-auto">
             <Link to="/" className="text-black hover:text-gray-300">
               Ballina
             </Link>
@@ -68,7 +62,7 @@ const Navbar = () => {
 
         {/* Cart on the Right */}
         <div className="text-black relative flex items-center lg:pl-10">
-          <Link className="flex items-center" onClick={toggleCart}>
+          <Link to="/cart" className="flex items-center">
             <img className="h-8 px-3" src={cart} alt="cartIcon" />
             <span className="bg-blue-800 w-6 h-6 rounded-full absolute top-0 right-0 flex justify-center items-center text-white text-center text-xs">
               {cartState.items.length}
@@ -94,9 +88,7 @@ const Navbar = () => {
           Kontakti
         </Link>
       </div>
-
-      {/* Cart Component */}
-      <Cart isOpenCart={isOpenCart} toggleNavbar={toggleCart} />
+      
     </nav>
   );
 };

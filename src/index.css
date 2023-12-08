@@ -96,6 +96,24 @@
   .messenger-icon:hover + .tooltip {
     display: block;
   }
+
+  @keyframes moveCart {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px); /* Adjust the distance the trolley moves */
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .empty-cart-icon {
+    animation: moveCart 1s infinite; /* Set the animation properties */
+  }
+  
+ 
   
   
   

@@ -85,7 +85,7 @@ const ProductPage = () => {
         </div>
       </div>
       {showSuccessMessage && (
-        <SuccessModal message={showSuccessMessage} onClose={() => setShowSuccessMessage(false)} duration={3000} />
+        <SuccessModal message={showSuccessMessage} onClose={() => setShowSuccessMessage(false)} duration={2000} />
       )}
     </div>
   );

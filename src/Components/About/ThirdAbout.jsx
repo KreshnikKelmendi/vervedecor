@@ -13,9 +13,8 @@ const ThirdAbout = () => {
         <h3 className="text-3xl font-custom1">Your Title</h3>
         <p className="font-custom">
           Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit.
+          adipiscing elit. Your descriptive text goes here.
+         
         </p>
       </div>
     </div>
