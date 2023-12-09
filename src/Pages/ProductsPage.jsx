@@ -3,106 +3,94 @@ import { Link } from 'react-router-dom';
 import { data } from '../Components/data/data';
 
 const ProductsPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [sortBy, setSortBy] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedSortOption, setSelectedSortOption] = useState('');
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
+  const uniqueCategories = [...new Set(data.map((product) => product.category))];
+  const sortOptions = ['Lowest Price', 'Highest Price'];
+
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
   };
 
-  const handleShowAllCategories = () => {
-    // Set selectedCategory to null to show all categories
-    setSelectedCategory(null);
+  const handleSortOptionChange = (event) => {
+    setSelectedSortOption(event.target.value);
   };
 
-  const handleShowSubcategories = (subcategory) => {
-    // Set selectedCategory to the chosen subcategory
-    setSelectedCategory(subcategory);
-  };
-
-  const handleSortChange = (sortOption) => {
-    setSortBy(sortOption);
-  };
-
-  const sortedProducts = () => {
-    let sorted = [...data];
-
-    if (selectedCategory) {
-      sorted = sorted.filter(
-        (product) => product.category === selectedCategory || product.subcategory === selectedCategory
-      );
+  const sortedProducts = data.slice().sort((a, b) => {
+    if (selectedSortOption === 'Lowest Price') {
+      return a.price - b.price;
+    } else if (selectedSortOption === 'Highest Price') {
+      return b.price - a.price;
     }
+    return 0;
+  });
 
-    if (sortBy === 'lowest') {
-      sorted = sorted.sort((a, b) => a.price - b.price);
-    } else if (sortBy === 'highest') {
-      sorted = sorted.sort((a, b) => b.price - a.price);
-    }
+  const filteredProducts = sortedProducts.filter((product) => {
+    const categoryCondition =
+      selectedCategory === '' || product.category === selectedCategory;
 
-    return sorted;
-  };
+    return categoryCondition;
+  });
 
   return (
-    <div className="bg-slate-50">
-      <div className="pt-6">
-        <h2 className="text-2xl font-bold text-center font-custom">Produktet tona</h2>
-        <div className="flex flex-col lg:flex-row w-fit justify-center mx-auto mt-4 font-custom">
-          <button
-            onClick={handleShowAllCategories}
-            className={`mx-2 px-4 py-2 ${
-              selectedCategory === null ? 'border-b border-red-700' : ''
-            }`}
+    <div className="bg-slate-50 min-h-screen font-custom">
+      <div className=" mx-auto py-8">
+        <h2 className="text-3xl text-center mb-6">PRODUKTET TONA</h2>
+        <div className="flex flex-col items-center text-center justify-center mb-6 px-8 lg:px-0">
+          <label htmlFor="categoryFilter" className="text-lg mr-4 text-gray-500">
+            FILTRO PRODUKTET SIPAS KATEGORISE:
+          </label>
+          <select
+            id="categoryFilter"
+            value={selectedCategory}
+            onChange={handleCategoryChange}
+            className="p-3 bg-white lg:p-2 border text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
           >
-            ZGJEDH KATEGORINË
-          </button>
-          {/* Modify the data structure to include subcategories */}
-          {data.map((product) => (
-            <button
-              key={product.subcategory}
-              onClick={() => handleShowSubcategories(product.subcategory)}
-              className={`mx-2 mt-3 lg:mt-0 px-4 py-2 ${
-                selectedCategory === product.subcategory ? 'border-b border-cyan-700' : ''
-              }`}
-            >
-              {product.subcategory}
-            </button>
-          ))}
-          <div className="flex items-center mt-3 lg:mt-0">
-            <span className="mr-2">Sort by:</span>
-            <select
-              onChange={(e) => handleSortChange(e.target.value)}
-              value={sortBy || ''}
-              className="border border-gray-300 px-2 py-1 rounded"
-            >
-              <option value="">None</option>
-              <option value="lowest">Lowest Price</option>
-              <option value="highest">Highest Price</option>
-            </select>
-          </div>
+            <option value="">All</option>
+            {uniqueCategories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="sortOption" className="text-lg mr-4 text-gray-500">
+            RENDITI SIPAS CMIMIT:
+          </label>
+          <select
+            id="sortOption"
+            value={selectedSortOption}
+            onChange={handleSortOptionChange}
+            className="p-3 lg:p-2 border text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
+          >
+            <option value="">Select Sorting</option>
+            {sortOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 mt-8">
-          {sortedProducts().map((product) => (
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 px-5">
+          {filteredProducts?.map((product) => (
             <div
               key={product.id}
-              className="rounded border border-gray-100 p-4 m-4 flex flex-col"
+              className=" overflow-hidden bg-white shadow-xl"
             >
-              <div className="flex items-center justify-center mb-4">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="rounded h-32 lg:h-52 w-[100%] object-cover "
-                />
-              </div>
-              <div className="">
-                <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-40 lg:h-44 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                 <p className="text-gray-700 mb-4">{product.price.toFixed(2)} €</p>
                 <Link
                   to={`/products/${product.id}`}
                   onClick={() => window.scrollTo({ top: 0 })}
+                  className="text-base inline-block bg-gray-500 text-white px-2 py-1 lg:px-4 lg:py-2 hover:bg-red-700 transition duration-300"
                 >
-                  <button className="bg-red-500 text-white px-2 py-2 rounded hover:bg-red-700 transition duration-300">
-                    Shiko produktin
-                  </button>
+                  Shiko produktin
                 </Link>
               </div>
             </div>

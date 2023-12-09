@@ -33,7 +33,7 @@ const FirstAbout = () => {
           <p className='text-2xl font-custom uppercase'>fjala e klientëve</p>
         <div className="h-[1px] bg-red-300 flex-grow ml-4"></div> 
       </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="bg-white p-4 rounded-lg shadow-md">
               <div className="mb-4">
@@ -44,7 +44,7 @@ const FirstAbout = () => {
                 />
               </div>
               <p className="text-gray-600 text-md mb-4 font-custom">{testimonial.text}</p>
-              <p className="text-gray-900 font-semibold font-custom1">{testimonial.name}</p>
+              <p className="text-gray-900 font-semibold font-custom">{testimonial.name}</p>
             </div>
           ))}
         </div>

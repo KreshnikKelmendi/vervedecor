@@ -12,7 +12,6 @@ import ContactPage from "./Pages/ContactPage";
 import Checkout from "./Pages/Checkout";
 
 
-
 function App() {
   return (
     <div className="App">
@@ -29,7 +28,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
             </Routes>
             <Footer />
-            </CartProvider>
+          </CartProvider>
         </BrowserRouter>
         
     </div>

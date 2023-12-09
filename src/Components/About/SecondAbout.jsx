@@ -68,15 +68,15 @@ const Carousel = () => {
           ))}
         </ul>
       </div>
-      <div className="w-full md:w-1/2 text-center flex flex-col justify-center items-center p-4 lg:px-20">
-  <h3 className="text-3xl md:text-3xl mb-4">Your Title</h3>
+      <div className="w-full md:w-1/2 text-center flex flex-col justify-center items-center p-4 lg:px-20 font-custom">
+  <h3 className="text-3xl md:text-3xl mb-4 font-custom">Your Title</h3>
   <p className="">
     Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit. Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit.Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
     adipiscing elit.
   </p>
-  <button className=' bg-red-500 hover:bg-gray-400 px-10 py-1 my-5 rounded-xl text-white'>SEE MORE</button>
+  <button className=' bg-gray-500 hover:bg-red-700 px-4 py-2 my-5 text-white'>SEE MORE</button>
 </div>
     </div>
   );

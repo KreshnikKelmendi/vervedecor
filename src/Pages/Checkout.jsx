@@ -85,18 +85,18 @@ const Checkout = () => {
   };
 
   return (
-    <div className="lg:px-[100px] mx-auto p-4">
-      <h2 className="text-3xl font-bold mb-6">Totali i porosisë</h2>
+    <div className="lg:px-[100px] mx-auto p-4 font-custom">
+      <h2 className="text-3xl mb-6">Totali i porosisë</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
-          <h3 className="text-l text-gray-300 font-semibold mb-4">Produktet e mia</h3>
+          <h3 className="text-l text-gray-300 mb-4">Produktet e mia</h3>
           <ul>
             {cartState?.items.map((item, index) => (
               <li key={index} className="flex items-center mb-4">
                 <img src={item.image} alt={`${item.name}`} className="w-32 h-20 object-cover mr-4 rounded-lg" />
                 <div>
-                  <p className="font-bold">{item.name}</p>
-                  <p>
+                  <p>{item.name}</p>
+                  <p className='text-gray-500'>
                     Sasia: {item.quantity} x {item.price ? item.price.toFixed(2) : 'N/A'} €
                   </p>
                 </div>

@@ -62,6 +62,16 @@ const data = [
       category: 'Other', 
       price: 49.99, 
       image: product1 
+    },{
+      id: 7, 
+      name: 'Product 6', 
+      description: "Lorem ipsum dolor4", 
+      singlePhoto1: product3, 
+      singlePhoto2: product1, 
+      singlePhoto3: product2,
+      category: 'Dhurata', 
+      price: 49.99, 
+      image: product1
     }
     
   ];
