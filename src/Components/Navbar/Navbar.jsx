@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../Pages/CartContext";
 import cart from "../Assets/shopping-bag.png";
+import menu from "../Assets/menu.png"
 
 const Navbar = () => {
   const { cartState } = useCart();
@@ -14,28 +15,20 @@ const Navbar = () => {
 
   return (
     <nav className=" p-4 bg-neutral-100">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className=" mx-auto flex justify-between items-center">
         {/* Hamburger Menu for Mobile (Left) */}
         <div className="lg:hidden">
           <button
             onClick={toggleNavbar}
             className="text-black hover:text-gray-300 focus:outline-none focus:text-gray-300"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+            <img src={menu} alt="" />
               {isOpen ? (
                 <path d="M6 18L18 6M6 6l12 12"></path>
               ) : (
                 <path d="M4 6h16M4 12h16M4 18h16"></path>
               )}
-            </svg>
+            
           </button>
         </div>
 
@@ -62,9 +55,9 @@ const Navbar = () => {
 
         {/* Cart on the Right */}
         <div className="text-black relative flex items-center lg:pl-6">
-          <Link to="/cart" className="flex items-center">
+          <Link to="/cart" className="flex items-center hover:scale-110">
             <img className="h-8 px-3" src={cart} alt="cartIcon" />
-            <span className="bg-blue-800 font-custom w-6 h-6 rounded-full absolute top-0 right-0 flex justify-center items-center text-white text-center text-xs">
+            <span className="bg-gray-700 font-custom w-6 h-6 rounded-full absolute bottom-3 right-[1px] flex justify-center items-center text-white text-center text-xs">
               {cartState.items.length}
             </span>
           </Link>

@@ -45,15 +45,15 @@ const ProductPage = () => {
           <img
             src={product[`singlePhoto${selectedPhotoIndex + 1}`]}
             alt={`${product.name} - ${selectedPhotoIndex + 1}`}
-            className="w-full h-52 lg:h-96 mb-4 object-cover"
+            className="w-full h-56 lg:h-96 mb-4 object-cover"
           />
           <div className="flex mt-4">
-            {[1, 2, 3].map(index => (
+            {[1, 2].map(index => (
               <img
                 key={index}
                 src={product[`singlePhoto${index}`]}
                 alt={`${product.name} - ${index}`}
-                className={`w-1/2 h-24 object-cover cursor-pointer ${selectedPhotoIndex === index - 1 ? 'border-2 border-gray-500' : ''}`}
+                className={`w-full h-28 object-cover cursor-pointer ${selectedPhotoIndex === index - 1 ? 'border-2 border-gray-500' : ''}`}
                 onClick={() => handleThumbnailClick(index - 1)}
               />
             ))}
