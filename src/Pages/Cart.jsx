@@ -17,6 +17,14 @@ const EmptyCartIcon = () => (
         Shfleto produkte
       </button>
     </Link>
+    <div className='text-center flex justify-center items-center mt-4'>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className='text-green-800'>
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="16" x2="12" y2="12" />
+        <line x1="12" y1="8" x2="12" y2="8" />
+      </svg>
+      <i className='text-[8px] text-green-800 ml-1'>Shporta juaj mund të përmbajë më shumë se një produkt, por produkti nuk bën të jetë i njëjtë.</i>
+    </div>
   </div>
 );
 
@@ -48,6 +56,8 @@ const Cart = () => {
   };
 
   return (
+    <>
+    
     <div className="flex justify-center items-center py-10 lg:py-20" style={{ height: cartState.items.length === 0 ? '100vh' : 'auto' }}>
       {!isCheckoutVisible && (
         <div className="w-full max-w-md p-6 bg-white rounded font-custom">
@@ -100,6 +110,7 @@ const Cart = () => {
       )}
       {isCheckoutVisible && <Checkout />}
     </div>
+    </>
   );
 };
 

@@ -114,7 +114,7 @@ const Latest = () => {
         <div className="flex justify-center">
           <Link to="/products" onClick={() => window.scrollTo({ top: 0 })}>
             <button
-              className={`hover:bg-gray-400 text-black font-custom py-2 px-14 rounded-xl focus:outline-none focus:ring focus:ring-blue-300 ${isMobile ? 'hidden' : ''}`}
+              className={`hover:bg-gray-400 text-black font-custom py-2 px-14 rounded-xl focus:outline-none focus:ring focus:ring-blue-300 ${isMobile ? 'block' : ''}`}
             >
               Shiko te gjitha
             </button>
