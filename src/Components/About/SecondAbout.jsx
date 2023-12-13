@@ -38,7 +38,7 @@ const Carousel = () => {
           <img
             src={images[currentImage]}
             alt=""
-            className="w-full h-[60vh] object-contain transition-transform transform-gpu scale-105 duration-300"
+            className="w-full h-[30vh] lg:h-[60vh] object-contain transition-transform transform-gpu scale-105 duration-300"
           />
           <div className="hidden absolute inset-0 items-center justify-between">
             <button

@@ -6,6 +6,7 @@ const ProductsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedSortOption, setSelectedSortOption] = useState('');
   const [loading, setLoading] = useState(false);
+  const [visibleProducts, setVisibleProducts] = useState(8); // Initial number of visible products
 
   const uniqueCategories = [...new Set(data.map((product) => product.category))];
   const sortOptions = ['Nga cmimi me i ulet', 'Nga cmimi me i larte'];
@@ -17,23 +18,25 @@ const ProductsPage = () => {
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Update selected category and set loading to false
     setSelectedCategory(category);
+    setVisibleProducts(8);
     setLoading(false);
   };
 
   const handleSortOptionChange = async (event) => {
     const sortOption = event.target.value;
 
-    // Set loading to true when sort option changes
     setLoading(true);
 
-    // Simulate an asynchronous process (replace with your actual data fetching logic)
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Update selected sort option and set loading to false
     setSelectedSortOption(sortOption);
+    setVisibleProducts(8);
     setLoading(false);
+  };
+
+  const handleShowMore = () => {
+    setVisibleProducts((prevVisible) => prevVisible + 8);
   };
 
   const sortedProducts = data.slice().sort((a, b) => {
@@ -64,7 +67,7 @@ const ProductsPage = () => {
             id="categoryFilter"
             value={selectedCategory}
             onChange={handleCategoryChange}
-            className="p-3 bg-white lg:p-2 border text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
+            className="p-4 bg-white lg:p-2 border text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
           >
             <option value="">Te gjitha</option>
             {uniqueCategories.map((category) => (
@@ -80,7 +83,7 @@ const ProductsPage = () => {
             id="sortOption"
             value={selectedSortOption}
             onChange={handleSortOptionChange}
-            className="p-3 lg:p-2 border bg-white text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
+            className="p-4 lg:p-2 border bg-white text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
           >
             <option value="">Cmimi</option>
             {sortOptions.map((option) => (
@@ -116,11 +119,8 @@ const ProductsPage = () => {
           )}
         </div>
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 px-5">
-          {filteredProducts?.map((product) => (
-            <div
-              key={product.id}
-              className=" overflow-hidden bg-white shadow-xl"
-            >
+          {filteredProducts.slice(0, visibleProducts).map((product) => (
+            <div key={product.id} className=" overflow-hidden bg-white shadow-xl">
               <img
                 src={product.image}
                 alt={product.name}
@@ -140,6 +140,16 @@ const ProductsPage = () => {
             </div>
           ))}
         </div>
+        {filteredProducts.length > visibleProducts && (
+          <div className="flex justify-center mt-10">
+            <button
+              className="bg-gray-800 w-52 text-white px-4 py-2"
+              onClick={handleShowMore}
+            >
+              Shfaq me shume
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

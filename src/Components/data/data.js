@@ -72,6 +72,56 @@ const data = [
       category: 'Dhurata', 
       price: 49.99, 
       image: product1
+    },{
+      id: 8, 
+      name: 'Product 8', 
+      description: "Lorem ipsum dolor4", 
+      singlePhoto1: product3, 
+      singlePhoto2: product1, 
+      singlePhoto3: product2,
+      category: 'Dhurata', 
+      price: 49.99, 
+      image: product1
+    },{
+      id: 9, 
+      name: 'Product 6', 
+      description: "Lorem ipsum dolor4", 
+      singlePhoto1: product3, 
+      singlePhoto2: product1, 
+      singlePhoto3: product2,
+      category: 'Dhurata', 
+      price: 49.99, 
+      image: product1
+    },{
+      id: 10, 
+      name: 'Product 6', 
+      description: "Lorem ipsum dolor4", 
+      singlePhoto1: product3, 
+      singlePhoto2: product1, 
+      singlePhoto3: product2,
+      category: 'Dhurata', 
+      price: 49.99, 
+      image: product1
+    },{
+      id: 11, 
+      name: 'Product 6', 
+      description: "Lorem ipsum dolor4", 
+      singlePhoto1: product3, 
+      singlePhoto2: product1, 
+      singlePhoto3: product2,
+      category: 'Dhurata', 
+      price: 49.99, 
+      image: product1
+    },{
+      id: 12, 
+      name: 'Product 6', 
+      description: "Lorem ipsum dolor4", 
+      singlePhoto1: product3, 
+      singlePhoto2: product1, 
+      singlePhoto3: product2,
+      category: 'Dhurata', 
+      price: 49.99, 
+      image: product1
     }
     
   ];

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const SuccessModal = ({ message, onClose, duration }) => {
   // Automatically close the modal after the specified duration
@@ -12,8 +13,8 @@ const SuccessModal = ({ message, onClose, duration }) => {
   }, [onClose, duration]);
 
   return (
-    <div className="fixed inset-0 top-16 items-center justify-center p-2">
-        <div className="text-white bg-emerald-400 h-20 justify-center border-dashed border-2 items-center flex px-4">
+    <div className="absolute right-1 bottom-1 items-center justify-center">
+        <div className="text-white bg-emerald-600 h-auto w-fit justify-center items-center flex px-4">
             <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-7 w-7 text-white mr-2"
@@ -26,7 +27,10 @@ const SuccessModal = ({ message, onClose, duration }) => {
               clipRule="evenodd"
             />
           </svg>
-          <p>{message}</p>
+          <div className='py-6 text-center'>
+            <p>{message}</p>
+            <Link className='text-gray-700 mt-6' to="/cart">Shko në shportë</Link>
+          </div>
         </div>
     </div>
   );

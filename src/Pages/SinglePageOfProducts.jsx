@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { data } from '../Components/data/data';
 import { useCart } from './CartContext';
 import SuccessModal from './SuccessModal';
+import paymetnMethod from "../Components/Assets/wallet.png"
+import quality from "../Components/Assets/quality.png"
+import cart from "../Components/Assets/shopping-bag.png"
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -23,9 +26,10 @@ const ProductPage = () => {
     }
   };
 
-  const handleAddToCart = () => {
-    const existingCartItem = cartState.items.find(item => item.id === product.id);
 
+  const existingCartItem = cartState.items.find(item => item.id === product.id);
+  const handleAddToCart = () => {
+  
     if (existingCartItem) {
       setShowSuccessMessage(`${product.name} është shtuar më herët në shportë!`);
     } else {
@@ -79,16 +83,28 @@ const ProductPage = () => {
             <div>
               <button
                 onClick={handleAddToCart}
-                className="bg-gray-500 text-white px-4 py-2 lg:mt-8 hover:bg-red-700 transition duration-300"
+                className="bg-gray-500 flex text-center justify-center items-center text-white w-44 lg:w-52 h-10 lg:mt-8 hover:bg-red-700 transition duration-300"
               >
-                Shto në shportë
+                <img className='w-4 h-4 mr-5' src={cart} alt=""/>
+                {existingCartItem ? 'Në shportë' : 'Shto në shportë'}
               </button>
+             
+            </div>
+          </div>
+          <div className="text-sm mt-10 text-green-800">
+            <div className='flex gap-x-3'>
+              <img src={paymetnMethod} alt="" className='w-4 h-4 object-cover' />
+              <p className='text-[11px]'>Paguaj me kesh pas pranimit të porosisë</p>
+            </div>
+            <div className='flex gap-x-3 mt-3'>
+              <img src={quality} alt="" className='w-4 h-4 object-cover' />
+              <p className='text-[11px]'>Origjinaliteti i garantuar për të gjitha produktet</p>
             </div>
           </div>
         </div>
       </div>
       {showSuccessMessage && (
-        <SuccessModal message={showSuccessMessage} onClose={() => setShowSuccessMessage(false)} duration={2000} />
+        <SuccessModal message={showSuccessMessage} onClose={() => setShowSuccessMessage(false)} duration={3000} />
       )}
     </div>
   );

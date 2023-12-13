@@ -3,6 +3,7 @@ import { useCart } from './CartContext';
 import Checkout from './Checkout';
 import { Link } from 'react-router-dom';
 import trolley from "../Components/Assets/shopper.png"
+import deleteCart from "../Components/Assets/delete.png"
 
 const EmptyCartIcon = () => (
   <div className="text-center empty-cart-icon-container font-custom">
@@ -23,22 +24,17 @@ const EmptyCartIcon = () => (
         <line x1="12" y1="16" x2="12" y2="12" />
         <line x1="12" y1="8" x2="12" y2="8" />
       </svg>
-      <i className='text-[8px] text-green-800 ml-1'>Shporta juaj mund të përmbajë më shumë se një produkt, por produkti nuk bën të jetë i njëjtë.</i>
+      <i className='text-[9px] text-green-800 ml-1'>Shporta juaj mund të përmbajë më shumë se një produkt, por produkti nuk bën të jetë i njëjtë.</i>
     </div>
   </div>
 );
 
 const RecycleBinIcon = () => (
-  <svg
-    className="w-5 h-5 fill-current text-red-500 mr-2"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M3 6h18M4 6l1 12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2l1-12M9 14v-3M15 14v-3" />
-  </svg>
+  <img
+  src={deleteCart}
+  alt="Recycle Bin Icon"
+  className="w-4 h-4 text-red-500 mr-2"
+/>
 );
 
 const Cart = () => {
