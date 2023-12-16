@@ -47,7 +47,7 @@ const Latest = () => {
   }, [nextSlide, isMobile]);
 
   return (
-    <div className="bg-neutral-50 mt-16 py-12">
+    <div className=" bg-slate-50 mt-16 py-12">
       <div className="mx-auto relative">
         <div className='flex justify-between items-center p-5'>
           <div className="h-[1px] bg-red-300 flex-grow mr-4"></div>
@@ -114,7 +114,7 @@ const Latest = () => {
         <div className="flex justify-center">
           <Link to="/products" onClick={() => window.scrollTo({ top: 0 })}>
             <button
-              className={`hover:bg-gray-400 text-black font-custom py-2 px-14 rounded-xl focus:outline-none focus:ring focus:ring-blue-300 ${isMobile ? 'block' : ''}`}
+              className={`hover:bg-gray-500 text-black font-custom py-2 px-14 focus:outline-none focus:ring focus:ring-blue-300 ${isMobile ? 'block' : ''}`}
             >
               Shiko te gjitha
             </button>

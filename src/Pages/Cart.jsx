@@ -56,7 +56,7 @@ const Cart = () => {
     
     <div className="flex justify-center items-center py-10 lg:py-20" style={{ height: cartState.items.length === 0 ? '100vh' : 'auto' }}>
       {!isCheckoutVisible && (
-        <div className="w-full max-w-md p-6 bg-white rounded font-custom">
+        <div className="w-full max-w-md p-6 rounded font-custom">
           <h2 className="text-3xl mb-6 text-center uppercase">Produktet në shportë</h2>
           {cartState.items.length === 0 ? (
             <EmptyCartIcon />

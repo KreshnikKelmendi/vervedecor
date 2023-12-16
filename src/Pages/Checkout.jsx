@@ -189,7 +189,7 @@ const Checkout = () => {
           </label>
           <button
             type="submit"
-            className="bg-green-800 text-white px-4 py-2 rounded mt-4 hover:bg-blue-700 transition duration-300"
+            className="bg-gray-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-700 transition duration-300"
           >
             Dërgo porosinë
           </button>

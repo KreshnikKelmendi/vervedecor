@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" p-4 bg-neutral-100">
+    <nav className="bg-slate-50 p-4 ">
       <div className="mx-auto flex justify-between items-center">
         {/* Hamburger Menu for Mobile (Left) */}
         <div className="lg:hidden">

@@ -56,7 +56,7 @@ const ProductsPage = () => {
   });
 
   return (
-    <div className="bg-slate-50 min-h-screen font-custom">
+    <div className=" min-h-screen font-custom">
       <div className=" mx-auto py-8">
         <h2 className="text-3xl text-center mb-6">PRODUKTET TONA</h2>
         <div className="flex flex-col lg:flex-row items-center text-center justify-center mb-6 px-8 lg:px-0">
