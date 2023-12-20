@@ -69,7 +69,7 @@ const ProductsPage = () => {
             onChange={handleCategoryChange}
             className="p-4 bg-white lg:p-2 border text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
           >
-            <option value="">Te gjitha</option>
+            <option value="" className='text-center'>Te gjitha</option>
             {uniqueCategories.map((category) => (
               <option key={category} value={category}>
                 {category}
@@ -85,7 +85,7 @@ const ProductsPage = () => {
             onChange={handleSortOptionChange}
             className="p-4 lg:p-2 border bg-white text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
           >
-            <option value="">Cmimi</option>
+            <option value="" className='text-center'>Cmimi</option>
             {sortOptions.map((option) => (
               <option key={option} value={option}>
                 {option}

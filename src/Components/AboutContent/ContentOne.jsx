@@ -12,12 +12,6 @@ const ContentOne = () => {
           veçantë artistike t’ia japim përkushtimin e duhur. Tek ne gjeni lule të punuara nga floriste të 
           trajnuara, të cilat i adhurojnë lulet dhe ky përkushtim reflekton në çdo punim që bëjmë.
       </div>
-
-      <div className='p-16 sm:p-28 mb-16 bg-myWebsite'>
-        <div className='text-center font-custom'>
-          <p className="text-center lg:text-2xl p-2 shadow-xl shadow-gray-700 bg-neutral-50 text-red-900 uppercase">Zbukuroni ngjarjet e rëndësishme në jetën tuaj!</p>
-        </div>
-      </div>
    
     </>
   )
