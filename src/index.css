@@ -1,13 +1,8 @@
-body{
-  background-image: url(./Components/Assets/wall.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 
 @font-face {
     font-family: poppins;
-    src: url(../public/fonts/The\ Foregen\ Rough\ One.otf);
+    src: url(../public/fonts/Poppins-ExtraLight.ttf);
 }
 
 /* @font-face {
@@ -118,6 +113,12 @@ body{
   
   .empty-cart-icon {
     animation: moveCart 1s infinite; /* Set the animation properties */
+  }
+  .bgwa{
+    background-image: url(./Components/Assets/wave3.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
  
