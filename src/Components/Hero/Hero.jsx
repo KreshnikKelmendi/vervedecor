@@ -88,9 +88,9 @@ const Hero = () => {
           className="absolute voice-toggle-button top-[2vh] right-[15px]"
         >
           {isMuted ? (
-            <img src={soundOffIcon} alt="Sound Off" className="w-6 h-6" />
+            <img src={soundOffIcon} alt="Sound Off" className="w-4 h-4" />
           ) : (
-            <img src={soundOnIcon} alt="Sound On" className="w-6 h-6" />
+            <img src={soundOnIcon} alt="Sound On" className="w-4 h-4" />
           )}
         </button>
       </div>

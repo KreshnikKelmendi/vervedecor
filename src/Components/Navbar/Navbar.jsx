@@ -47,7 +47,8 @@ const Navbar = () => {
             placeholder="Search..."
             value={searchQuery}
             onChange={handleInputChange}
-            className="px-2 py-1 rounded border w-full border-white text-black focus:outline-none focus:border-gray-400"
+            className="px-2 py-1 border w-full border-white text-black focus:border-gray-400"
+            style={{ userSelect: 'none' }}
           />
 
           {/* Suggestions Dropdown */}
@@ -66,12 +67,12 @@ const Navbar = () => {
           )}
          
         </div>
-        <div className="flex">
+        <div className="flex gap-x-3">
         <a href="#" className="hover:text-blue-500">
-              <i className="fab fa-facebook lg:text-2xl"></i>
+              <i className="fab fa-facebook text-xl lg:text-2xl"></i>
             </a>
             <a href="#" className="hover:text-blue-500">
-              <i className="fab fa-instagram lg:text-2xl mx-4"></i>
+              <i className="fab fa-instagram text-xl lg:text-2xl "></i>
             </a>
         </div>
       </div>
@@ -119,7 +120,7 @@ const Navbar = () => {
           {/* Cart on the Right */}
           <div className="text-black relative flex items-center lg:pl-6">
             <Link to="/cart" className="flex items-center hover:scale-110">
-              <img className="h-8 lg:px-3" src={cart} alt="cartIcon" />
+              <img className="h-8" src={cart} alt="cartIcon" />
               {cartState.items.length > 0 && (
                 <span className="bg-gray-700 font-custom w-6 h-6 rounded-full absolute bottom-3 right-[1px] flex justify-center items-center text-white text-center text-xs">
                   {cartState.items.length}
