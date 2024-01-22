@@ -39,7 +39,7 @@ const About = () => {
       <InView triggerOnce onChange={handleInView}>
         {({ inView, ref }) => (
           <motion.div
-            className='text-3xl my-5 py-8 text-center font-custom justify-center align-center'
+            className='text-3xl my-5 py-4 text-center font-custom justify-center align-center'
             variants={containerVariants}
             initial="hidden"
             animate={controls}
@@ -87,8 +87,8 @@ const About = () => {
           </motion.div>
         )}
       </InView>
-      <Latest variants={containerVariants} controls={controls} />
       <ThirdAbout variants={containerVariants} controls={controls} />
+      <Latest variants={containerVariants} controls={controls} />
       <SecondAbout variants={containerVariants} controls={controls} />
     </>
   );

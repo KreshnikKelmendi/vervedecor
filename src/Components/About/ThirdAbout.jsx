@@ -3,7 +3,7 @@ import specialGift from "../Assets/specialGift.jpg";
 
 const ThirdAbout = () => {
   return (
-    <div className='w-full mt-6 lg:mt-16 px-6 lg:px-20 relative'>
+    <div className='w-full mt-6 py-6 lg:mt-16 relative'>
       <img
         src={specialGift}
         alt="specialGift"

@@ -63,12 +63,12 @@ const ProductPage = () => {
             ))}
           </div>
         </div>
-        <div className="flex-shrink-0 px-1 lg:px-0 mt-3 lg:mt-0 md:w-1/2 md:ml-8">
+        <div className="flex-shrink-0 px-1 lg:px-0 mt-3 lg:mt-0 md:w-1/2 md:ml-8 font-custom">
           <h2 className="text-3xl font-bold mb-4">{product.name}</h2>
-          <p className="text-gray-500 mb-4">{product.description}</p>
+          <p className="text-[#094962] font-semibold text-base mb-4">{product.description}</p>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xl text-red-500">{(product.price * quantity).toFixed(2)} €</p>
+              <p className="text-xl text-red-500 font-extrabold">{(product.price * quantity).toFixed(2)} €</p>
               <p className='mt-2'>Sasia</p>
               <div className="flex items-center mt-2 border-2 font-custom">
                 <button onClick={handleDecrement} className=" border-r-2 bg-slate-100 hover:bg-slate-300 text-gray-700 px-2 py-1">
@@ -83,7 +83,7 @@ const ProductPage = () => {
             <div>
               <button
                 onClick={handleAddToCart}
-                className="bg-gray-500 flex text-center justify-center items-center text-white w-44 lg:w-52 h-10 lg:mt-8 hover:bg-red-700 transition duration-300"
+                className="bg-red-400 flex text-center justify-center items-center text-white w-44 lg:w-52 h-10 lg:mt-8 hover:bg-gray-400 font-semibold transition duration-300"
               >
                 <img className='w-4 h-4 mr-5' src={cart} alt=""/>
                 {existingCartItem ? 'Në shportë' : 'Shto në shportë'}

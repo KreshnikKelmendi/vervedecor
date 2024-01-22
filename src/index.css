@@ -115,7 +115,7 @@
     animation: moveCart 1s infinite; /* Set the animation properties */
   }
   .bgwa{
-    background-image: url(./Components/Assets/wave3.svg);
+    background-image: url(./Components/Assets/wave7.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

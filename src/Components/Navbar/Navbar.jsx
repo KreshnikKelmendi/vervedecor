@@ -43,11 +43,11 @@ const Navbar = () => {
         
         <div className="relative">
           <input
-            type="text"
+            type="search"
             placeholder="Search..."
             value={searchQuery}
             onChange={handleInputChange}
-            className="px-2 py-1 border w-full border-white text-black focus:border-gray-400"
+            className="px-2 py-1 border w-full rounded-md border-white text-black focus:border-gray-400"
             style={{ userSelect: 'none' }}
           />
 
@@ -79,7 +79,7 @@ const Navbar = () => {
 
 
 
-      <nav className="py-5 lg:py-8 px-6 w-full bg-white shadow-md">
+      <nav className="py-5 lg:py-7 px-6 w-full bg-white shadow-md">
         <div className="mx-auto flex justify-between items-center">
           {/* Hamburger Menu for Mobile (Left) */}
           <div className="lg:hidden">
