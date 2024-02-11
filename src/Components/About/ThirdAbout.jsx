@@ -10,10 +10,8 @@ const ThirdAbout = () => {
         className="w-full h-[50vh] object-cover"
       />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center bg-opacity-70 bg-white hover:bg-red-100 p-4 rounded-md">
-        <h3 className="text-3xl font-custom">Your Title</h3>
-        <p className="font-custom">
-          Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit. Your descriptive text goes here.
+        <p className="font-custom font-bold">
+        Nga dasmat e mrekullueshme tek ngjarjet e ndryshme festive, ne specializohemi në organizimin e çdo lloji eventi. Ekipi ynë i përkushtuar dhe kreativ do të ndihmojë që momenti juaj të jetë shumë më shumë se një ngjarje e zakonshme.
          
         </p>
       </div>

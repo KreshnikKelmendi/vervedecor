@@ -6,8 +6,8 @@ const Footer = () => {
     <footer className="border-t border-gray-500 mx-5 py-16">
       <div className="mx-auto flex flex-wrap justify-between text-center">
         <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-6 sm:mb-0">
-          <h3 className="text-2xl font-custom">Company Name</h3>
-          <p className="mt-4 font-custom text-gray-500">Lorem ipsum dolor sit amet</p>
+        <p className="text-[#094962] text-2xl">VERVE Décors</p>
+          <p className="mt-4 font-custom text-gray-500 text-[12px]">Evente, ngjarje, dhurata të personalizuara</p>
         </div>
         <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 mb-6 sm:mb-0 text-center">
           <h3 className="text-2xl font-custom">Menu</h3>

@@ -3,6 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 import image1 from '../Assets/pexels-luciann-photography-3693392.jpg';
 import image2 from '../Assets/cVCYJP46Ew.jpg';
 import image3 from '../Assets/pexels-karolina-grabowska-4464487.jpg';
+import { Link } from 'react-router-dom';
 
 const SliderComponent = () => {
   const [textIndex, setTextIndex] = useState(0);
@@ -60,7 +61,9 @@ const SliderComponent = () => {
           Next
         </button>
         <button onClick={handlePrevSlide}>Previous</button> */}
+        <Link to="/products" onClick={() => window.scrollTo({ top: 0, left: 0 })}>
         <button className='text-xs lg:text-base px-6 mt-3 font-extrabold font-custom py-2 bg-red-400 hover:bg-white hover:text-black hover:duration-500 rounded-md text-white'>Shfleto produktet</button>
+        </Link>
         </div>
       </div>
     </>

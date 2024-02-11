@@ -40,9 +40,9 @@ const ProductsPage = () => {
   };
 
   const sortedProducts = data.slice().sort((a, b) => {
-    if (selectedSortOption === 'Nga cmimi me i ulet') {
+    if (selectedSortOption === 'Nga çmimi më i ulët') {
       return a.price - b.price;
-    } else if (selectedSortOption === 'Nga cmimi me i larte') {
+    } else if (selectedSortOption === 'Nga çmimi më i lartë') {
       return b.price - a.price;
     }
     return 0;
@@ -67,9 +67,9 @@ const ProductsPage = () => {
             id="categoryFilter"
             value={selectedCategory}
             onChange={handleCategoryChange}
-            className="p-4 bg-white lg:p-2 border text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
-          >
-            <option value="" className='text-center'>Te gjitha</option>
+            className="p-2 h-10 lg:h-fit font-custom uppercase border border-gray-400 bg-[#F8F8F8] cursor-pointer w-[100%] lg:w-[23.5%] mt-4 lg:mt-0 rounded-none"
+            >
+            <option value="" className='text-center'>Të gjitha</option>
             {uniqueCategories.map((category) => (
               <option key={category} value={category}>
                 {category}
@@ -77,15 +77,15 @@ const ProductsPage = () => {
             ))}
           </select>
           <label htmlFor="sortOption" className="text-lg lg:mr-4 lg:ml-6 mt-3 lg:mt-0 text-gray-500">
-            RENDITI SIPAS CMIMIT:
+            RENDITI SIPAS ÇMIMIT:
           </label>
           <select
             id="sortOption"
             value={selectedSortOption}
             onChange={handleSortOptionChange}
-            className="p-4 lg:p-2 border bg-white text-center rounded focus:outline-none focus:border-blue-500 w-full lg:w-72"
-          >
-            <option value="" className='text-center'>Cmimi</option>
+            className="p-2 h-10 lg:h-fit font-custom uppercase border border-gray-400 bg-[#F8F8F8] cursor-pointer w-[100%] lg:w-[23.5%] mt-4 lg:mt-0 rounded-none"
+            >
+            <option value="" className='text-center'>Çmimi</option>
             {sortOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -131,9 +131,9 @@ const ProductsPage = () => {
                 <p className="text-gray-700 mb-4">{product.price.toFixed(2)} €</p>
                 <Link
                   to={`/products/${product.id}`}
-                  onClick={() => window.scrollTo({ top: 0 })}
-                  className="text-base inline-block bg-gray-500 text-white px-2 py-1 lg:px-4 lg:py-2 hover:bg-red-700 transition duration-300"
-                >
+                  onClick={() => window.scrollTo({ top: 0, left: 0 })}
+                  className="text-xs lg:text-xs rounded-md inline-block bg-red-400 text-white px-2 py-1 lg:px-4 lg:py-2 hover:bg-gray-500 transition duration-300"
+                  >
                   Shiko produktin
                 </Link>
               </div>
@@ -143,10 +143,10 @@ const ProductsPage = () => {
         {filteredProducts.length > visibleProducts && (
           <div className="flex justify-center mt-10">
             <button
-              className="bg-gray-800 w-52 text-white px-4 py-2"
+              className="bg-red-400 rounded-md text-xs w-52 text-white px-4 py-2 hover:bg-gray-500 transition duration-300"
               onClick={handleShowMore}
             >
-              Shfaq me shume
+              Shfaq më shumë
             </button>
           </div>
         )}

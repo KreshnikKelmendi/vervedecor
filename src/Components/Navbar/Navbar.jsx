@@ -38,41 +38,16 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full text-[10px] lg:text-[12px] text-center h-12 items-center justify-between px-6 flex bg-[#E8AAAD] uppercase font-bold text-white">
-        <p className="text-[#094962]">VERVE Décors</p>
+      <div className="w-full text-[10px] lg:text-[12px] text-center h-12 items-center justify-between px-6 flex flex-col lg:flex-row bg-[#E8AAAD] uppercase font-bold text-white">
+        <p className="text-white">Porosit online në web dhe në rrjetet tona sociale !</p>
         
-        <div className="relative">
-          <input
-            type="search"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={handleInputChange}
-            className="px-2 py-1 border w-full rounded-md border-white text-black focus:border-gray-400"
-            style={{ userSelect: 'none' }}
-          />
-
-          {/* Suggestions Dropdown */}
-          {filteredProducts.length > 0 && (
-            <div className="absolute z-40 text-black top-full left-0 mt-2 w-full bg-white border rounded-md shadow-lg">
-              {filteredProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="p-3 cursor-pointer hover:bg-gray-200"
-                  onClick={() => handleProductClick(product.id)}
-                >
-                  {product.name}
-                </div>
-              ))}
-            </div>
-          )}
-         
-        </div>
-        <div className="flex gap-x-3">
+        
+        <div className="flex gap-x-5 text-center lg:text-right">
+        <a href="https://www.instagram.com/vervedecors/" target="_blank" rel="noreferrer" className="hover:text-blue-500">
+              <i className="fab fa-instagram text-xl lg:text-2xl "></i>
+            </a>
         <a href="#" className="hover:text-blue-500">
               <i className="fab fa-facebook text-xl lg:text-2xl"></i>
-            </a>
-            <a href="#" className="hover:text-blue-500">
-              <i className="fab fa-instagram text-xl lg:text-2xl "></i>
             </a>
         </div>
       </div>

@@ -83,9 +83,9 @@ const ProductPage = () => {
             <div>
               <button
                 onClick={handleAddToCart}
-                className="text-xs flex text-center lg:text-base rounded-md bg-red-400 text-white px-4 py-2 hover:bg-gray-500 transition duration-300"
+                className="items-center justify-center text-xs flex text-center lg:text-base rounded-md bg-red-400 text-white font-normal px-4 py-2 hover:bg-gray-500 transition duration-300"
               >
-                <img className='w-4 h-4 mr-5' src={cart} alt=""/>
+                <img className='w-5 h-5 mr-5' src={cart} alt=""/>
                 {existingCartItem ? 'Në shportë' : 'Shto në shportë'}
               </button>
              
