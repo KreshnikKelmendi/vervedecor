@@ -77,7 +77,7 @@ const Navbar = () => {
           </div>
 
           {/* Navigation Links for Large Screens */}
-          <div className="hidden text-[14px] uppercase lg:flex lg:items-center justify-center space-x-8 ml-auto font-custom font-extrabold">
+          <div className="hidden text-[15px] uppercase lg:flex lg:items-center justify-center space-x-8 ml-auto font-custom font-extrabold">
             <Link to="/" onClick={() => window.scrollTo({ top: 0, left:0 })} className="text-[#094962] hover:text-gray-300">
               Ballina
             </Link>

@@ -67,7 +67,7 @@ const About = () => {
             animate={controls}
             ref={ref}
           >
-            <p className='p-5 text-lg lg:text-2xl font-bold lg:p-0 uppercase font-custom' variants={itemVariants}>
+            <p className='p-5 text-2xl font-bold lg:p-0 uppercase font-custom' variants={itemVariants}>
               Zbukuroni ngjarjet e rëndësishme në jetën tuaj!
             </p>
           </motion.div>
