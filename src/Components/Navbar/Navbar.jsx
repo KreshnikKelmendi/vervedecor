@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <>
       <div className="w-full py-3 lg:py-0 text-[10px] lg:text-[12px] text-center h-16 lg:h-12 items-center justify-between px-6 flex flex-col lg:flex-row bg-[#E8AAAD] uppercase font-bold text-white">
-        <p className="text-white">Porosit online në web dhe në rrjetet tona sociale !</p>
+        <p className="text-white">Porosit online në web dhe në rrjetet tona sociale!</p>
         
         
         <div className="flex gap-x-5 text-center lg:text-right">

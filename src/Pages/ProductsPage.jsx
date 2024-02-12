@@ -58,10 +58,10 @@ const ProductsPage = () => {
   return (
     <div className=" min-h-screen font-custom">
       <div className=" mx-auto py-8">
-        <h2 className="text-3xl text-center mb-6">PRODUKTET TONA</h2>
+        <h2 className="text-3xl text-center mb-6 font-bold font-custom">PRODUKTET TONA</h2>
         <div className="flex flex-col lg:flex-row items-center text-center justify-center mb-6 px-8 lg:px-0">
           <label htmlFor="categoryFilter" className="text-lg mr-4 text-gray-500">
-            FILTRO PRODUKTET SIPAS KATEGORISE:
+            FILTRO PRODUKTET SIPAS KATEGORISË:
           </label>
           <select
             id="categoryFilter"
@@ -118,17 +118,17 @@ const ProductsPage = () => {
             </div>
           )}
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 px-5">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 px-5 lg:mt-12">
           {filteredProducts.slice(0, visibleProducts).map((product) => (
-            <div key={product.id} className=" overflow-hidden bg-white shadow-xl">
+            <div key={product.id} className=" overflow-hidden bg-white shadow-md">
               <img
                 src={product.image}
                 alt={product.name}
                 className="w-full h-40 lg:h-44 object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                <p className="text-gray-700 mb-4">{product.price.toFixed(2)} €</p>
+              <div className="p-4 font-custom">
+                <h3 className="text-xl text-gray-500 font-semibold mb-2">{product.name}</h3>
+                <p className="text-black mb-4 font-bold">{product.price.toFixed(2)} €</p>
                 <Link
                   to={`/products/${product.id}`}
                   onClick={() => window.scrollTo({ top: 0, left: 0 })}

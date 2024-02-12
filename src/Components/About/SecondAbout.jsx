@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image1 from '../Assets/contentOne.jpg';
 import Image2 from '../Assets/decorative-heart.jpg';
 import Image3 from '../Assets/helium11.png';
+import { Link } from 'react-router-dom';
 
 const images = [Image1, Image2, Image3];
 
@@ -32,7 +33,7 @@ const Carousel = () => {
   }, [nextImage]);
 
   return (
-    <div className="flex flex-col md:flex-row w-full p-6 bg-slate-50 mt-16 md:p-20 text-center">
+    <div className="flex flex-col md:flex-row w-full p-6 bg-slate-50 md:p-20 text-center">
       <div className="w-full md:w-1/2">
         <div className="relative">
           <img
@@ -69,14 +70,13 @@ const Carousel = () => {
         </ul>
       </div>
       <div className="w-full md:w-1/2 text-center flex flex-col justify-center items-center p-4 lg:px-20 font-custom">
-  <h3 className="text-3xl md:text-3xl mb-4 font-custom">Your Title</h3>
+  <h3 className="text-3xl md:text-3xl mb-4 font-custom">VERVE Décors</h3>
   <p className="">
-    Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit.Your descriptive text goes here. Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit.
+  Ne besojmë se dekorimet janë thelbi i çdo eventi. Përdorimi i ngjyrave të kujdesshme, teksturave të veçanta dhe elementëve artistikë bëjnë që çdo event të ndjehet unik. Kujdesi ndaj detajit është në qendër të punës sonë; çdo gur dhe lule vendoset me kujdes për të siguruar një atmosferë të përsosur.
   </p>
-  <button className=' bg-gray-500 hover:bg-red-700 px-4 py-2 my-5 text-white'>SEE MORE</button>
+  <Link to="/products" onClick={() => window.scrollTo({ top: 0, left: 0 })} >
+       <button className='text-xs lg:text-base px-6 mt-3 font-extrabold font-custom py-2 bg-red-400 hover:bg-white hover:text-black hover:duration-500 rounded-md text-white'>Shfleto produktet</button>
+  </Link>
 </div>
     </div>
   );

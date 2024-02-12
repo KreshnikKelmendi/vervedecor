@@ -9,7 +9,7 @@ const SliderComponent = () => {
   const [textIndex, setTextIndex] = useState(0);
   const controls = useAnimation();
 
-  const texts = ['Zbukuroni ngjarjet e rëndësishme në jetën tuaj!', 'Text 2', 'Text 3'];
+  const texts = ['Zbukuroni ngjarjet e rëndësishme në jetën tuaj!', 'Blej dhuratën për Ditën e të dashuruarve!', 'Text 3'];
 
   const imageUrls = [image1, image2, image3];
 
@@ -21,7 +21,7 @@ const SliderComponent = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNextSlide();
-    }, 3000); // Change slide every 8 seconds for a slower pace (adjust as needed)
+    }, 3000); 
 
     return () => clearInterval(interval); // Clear interval on component unmount
   }, [textIndex, controls]);
@@ -55,8 +55,8 @@ const SliderComponent = () => {
           color: 'white',
         }}
       >
-        <div className='text-[#094962] bgwa font-custom p-6 py-6 lg:py-20'>
-        <p className='font-custom text-2xl lg:text-3xl mt-12 lg:mt-5 font-extrabold'>{texts[textIndex]}</p>
+        <div className='text-white font-custom py-6 lg:py-20'>
+        <p className='font-custom bg-red-400 p-2 opacity-80 rounded-md text-2xl lg:text-3xl mt-12 lg:mt-5 font-extrabold'>{texts[textIndex]}</p>
         {/* <button onClick={handleNextSlide} className="mr-2">
           Next
         </button>
