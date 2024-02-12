@@ -61,13 +61,13 @@ const About = () => {
       <InView triggerOnce onChange={handleInView}>
         {({ inView, ref }) => (
           <motion.div
-            className='text-3xl my-5 py-4 text-center font-custom justify-center align-center'
+            className='text-3xl my-5 lg:py-4 text-center font-custom justify-center align-center'
             variants={containerVariants}
             initial="hidden"
             animate={controls}
             ref={ref}
           >
-            <p className='p-1 text-lg lg:p-0 uppercase font-custom' variants={itemVariants}>
+            <p className='p-5 text-lg lg:text-2xl font-bold lg:p-0 uppercase font-custom' variants={itemVariants}>
               Zbukuroni ngjarjet e rëndësishme në jetën tuaj!
             </p>
           </motion.div>
@@ -76,7 +76,7 @@ const About = () => {
       <InView triggerOnce onChange={handleInView}>
         {({ inView, ref }) => (
           <motion.div
-            className="grid grid-cols-2 gap-4 px-6 md:grid-cols-4 text-center uppercase justify-center font-custom"
+            className="grid grid-cols-2 gap-4 px-5 md:grid-cols-4 text-center uppercase justify-center font-custom"
             variants={containerVariants}
             initial="hidden"
             animate={controls}
