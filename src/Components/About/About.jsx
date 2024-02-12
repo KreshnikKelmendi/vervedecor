@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
 import SecondAbout from './SecondAbout';
 import ThirdAbout from './ThirdAbout';
 import Latest from '../Products/Latest';
+import video1 from "../Assets/video1.MP4";
+import soundOffIcon from "../Assets/volumeOff.png";
+import soundOnIcon from "../Assets/volume.png";
+import { useInView } from 'react-intersection-observer';
 
 const About = () => {
+  const [isMuted, setIsMuted] = useState(true);
+  const [ref, inView] = useInView({
+    threshold: 0.3,
+  });
+
+
+
+  useEffect(() => {
+    const video = document.querySelector('video');
+    video.muted = isMuted;
+    video.play();
+  }, [isMuted]);
+
+
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -45,9 +67,9 @@ const About = () => {
             animate={controls}
             ref={ref}
           >
-            <h3 className='p-1 lg:p-0 uppercase' variants={itemVariants}>
+            <p className='p-1 text-lg lg:p-0 uppercase font-custom' variants={itemVariants}>
               Zbukuroni ngjarjet e rëndësishme në jetën tuaj!
-            </h3>
+            </p>
           </motion.div>
         )}
       </InView>
@@ -87,9 +109,30 @@ const About = () => {
           </motion.div>
         )}
       </InView>
-      <ThirdAbout variants={containerVariants} controls={controls} />
+
+      <div className="relative flex flex-col lg:flex-row lg:h-[85vh] mt-16 w-full 2xl:h-screen ">
+        <video
+          src={video1}
+          autoPlay
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        />
+        <button
+          onClick={toggleMute}
+          className="absolute voice-toggle-button z-50 top-[2vh] left-[15px]"
+        >
+          {isMuted ? (
+            <img src={soundOffIcon} alt="Sound Off" className="w-4 h-4" />
+          ) : (
+            <img src={soundOnIcon} alt="Sound On" className="w-4 h-4" />
+          )}
+        </button>
+        <ThirdAbout variants={containerVariants} controls={controls} />
+      </div>
+    
       <Latest variants={containerVariants} controls={controls} />
-      <SecondAbout variants={containerVariants} controls={controls} />
+      {/* <SecondAbout variants={containerVariants} controls={controls} /> */}
     </>
   );
 }

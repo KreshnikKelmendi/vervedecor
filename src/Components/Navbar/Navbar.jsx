@@ -78,16 +78,16 @@ const Navbar = () => {
 
           {/* Navigation Links for Large Screens */}
           <div className="hidden text-[14px] uppercase lg:flex lg:items-center justify-center space-x-8 ml-auto font-custom font-extrabold">
-            <Link to="/" className="text-[#094962] hover:text-gray-300">
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, left:0 })} className="text-[#094962] hover:text-gray-300">
               Ballina
             </Link>
-            <Link to="/about" className="text-[#094962] hover:text-gray-300">
-              Për ne
-            </Link>
-            <Link to="/products" className="text-[#094962] hover:text-gray-300">
+            <Link to="/products" onClick={() => window.scrollTo({ top: 0, left:0 })} className="text-[#094962] hover:text-gray-300">
               Produktet
             </Link>
-            <Link to="/contact" className="text-[#094962] hover:text-gray-300">
+            <Link to="/about" onClick={() => window.scrollTo({ top: 0, left:0 })} className="text-[#094962] hover:text-gray-300">
+              Për ne
+            </Link>
+            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, left:0 })} className="text-[#094962] hover:text-gray-300">
               Kontakti
             </Link>
           </div>
@@ -122,18 +122,18 @@ const Navbar = () => {
                 Ballina
               </Link>
               <Link
-                to="/about"
-                onClick={toggleNavbar}
-                className="text-black hover:text-gray-300 block py-3"
-              >
-                Për ne
-              </Link>
-              <Link
                 to="/products"
                 onClick={toggleNavbar}
                 className="text-black hover:text-gray-300 block py-3"
               >
                 Produktet
+              </Link>
+              <Link
+                to="/about"
+                onClick={toggleNavbar}
+                className="text-black hover:text-gray-300 block py-3"
+              >
+                Për ne
               </Link>
               <Link
                 to="/contact"

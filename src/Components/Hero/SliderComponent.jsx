@@ -56,13 +56,13 @@ const SliderComponent = () => {
         }}
       >
         <div className='text-white font-custom py-6 lg:py-20'>
-        <p className='font-custom bg-red-400 p-2 opacity-80 rounded-md text-2xl lg:text-3xl mt-12 lg:mt-5 font-extrabold'>{texts[textIndex]}</p>
+        <p className='font-custom bg-red-400 w-fit mx-5 p-2 opacity-90 lg:py-5 rounded-md text-2xl lg:text-3xl mt-12 lg:mt-5 font-extrabold'>{texts[textIndex]}</p>
         {/* <button onClick={handleNextSlide} className="mr-2">
           Next
         </button>
         <button onClick={handlePrevSlide}>Previous</button> */}
         <Link to="/products" onClick={() => window.scrollTo({ top: 0, left: 0 })}>
-        <button className='text-xs lg:text-base px-6 mt-3 font-extrabold font-custom py-2 bg-red-400 hover:bg-white hover:text-black hover:duration-500 rounded-md text-white'>Shfleto produktet</button>
+        <button className='text-xs mx-5 lg:text-base px-6 mt-3 font-extrabold font-custom py-2 bg-red-400 hover:bg-white hover:text-black hover:duration-500 rounded-md text-white'>Shfleto produktet</button>
         </Link>
         </div>
       </div>
