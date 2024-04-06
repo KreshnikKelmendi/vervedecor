@@ -3,7 +3,7 @@ import specialGift from "../Assets/specialGift.jpg";
 
 const ThirdAbout = () => {
   return (
-    <div className='w-full relative'>
+    <div className='w-full relative hidden lg:block'>
       <img
         src={specialGift}
         alt="specialGift"

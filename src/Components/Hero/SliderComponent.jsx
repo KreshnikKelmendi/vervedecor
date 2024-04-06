@@ -55,8 +55,8 @@ const SliderComponent = () => {
           color: 'white',
         }}
       >
-        <div className='text-white font-custom py-6 lg:py-20'>
-        <p className='font-custom bg-red-400 w-fit mx-5 p-2 opacity-90 lg:py-5 rounded-md text-2xl lg:text-3xl mt-12 lg:mt-5 font-extrabold'>{texts[textIndex]}</p>
+        <div className='text-black font-custom py-6 lg:py-20'>
+        <p className='font-custom bg-white w-fit mx-5 p-2 opacity-90 lg:py-5 rounded-md text-2xl lg:text-3xl mt-12 lg:mt-5 font-extrabold'>{texts[textIndex]}</p>
         {/* <button onClick={handleNextSlide} className="mr-2">
           Next
         </button>

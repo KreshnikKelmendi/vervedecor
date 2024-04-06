@@ -9,7 +9,7 @@ const ProductsPage = () => {
   const [visibleProducts, setVisibleProducts] = useState(8); // Initial number of visible products
 
   const uniqueCategories = [...new Set(data.map((product) => product.category))];
-  const sortOptions = ['Nga cmimi me i ulet', 'Nga cmimi me i larte'];
+  const sortOptions = ['Nga çmimi më i ulët', 'Nga çmimi më i lartë'];
 
   const handleCategoryChange = async (event) => {
     const category = event.target.value;
@@ -61,13 +61,13 @@ const ProductsPage = () => {
         <h2 className="text-3xl text-center mb-6 font-bold font-custom">PRODUKTET TONA</h2>
         <div className="flex flex-col lg:flex-row items-center text-center justify-center mb-6 px-8 lg:px-0">
           <label htmlFor="categoryFilter" className="text-lg mr-4 text-gray-500">
-            FILTRO PRODUKTET SIPAS KATEGORISË:
+            Filtro produktet sipas kategorisë:
           </label>
           <select
             id="categoryFilter"
             value={selectedCategory}
             onChange={handleCategoryChange}
-            className="p-2 h-10 lg:h-fit font-custom uppercase border border-gray-400 bg-[#F8F8F8] cursor-pointer w-[100%] lg:w-[23.5%] mt-4 lg:mt-0 rounded-none"
+            className="p-2 h-10 lg:h-fit font-custom uppercase border-gray-400 bg-[#F8F8F8] cursor-pointer w-[100%] lg:w-[23.5%] mt-4 lg:mt-0 rounded-none"
             >
             <option value="" className='text-center'>Të gjitha</option>
             {uniqueCategories.map((category) => (
@@ -77,13 +77,13 @@ const ProductsPage = () => {
             ))}
           </select>
           <label htmlFor="sortOption" className="text-lg lg:mr-4 lg:ml-6 mt-3 lg:mt-0 text-gray-500">
-            RENDITI SIPAS ÇMIMIT:
+            Renditi sipas çmimit:
           </label>
           <select
             id="sortOption"
             value={selectedSortOption}
             onChange={handleSortOptionChange}
-            className="p-2 h-10 lg:h-fit font-custom uppercase border border-gray-400 bg-[#F8F8F8] cursor-pointer w-[100%] lg:w-[23.5%] mt-4 lg:mt-0 rounded-none"
+            className="p-2 h-10 lg:h-fit font-custom uppercase border-gray-400 bg-[#F8F8F8] cursor-pointer w-[100%] lg:w-[23.5%] mt-4 lg:mt-0 rounded-none"
             >
             <option value="" className='text-center'>Çmimi</option>
             {sortOptions.map((option) => (
@@ -132,7 +132,7 @@ const ProductsPage = () => {
                 <Link
                   to={`/products/${product.id}`}
                   onClick={() => window.scrollTo({ top: 0, left: 0 })}
-                  className="text-xs lg:text-xs rounded-md inline-block bg-red-400 text-white px-2 py-1 lg:px-4 lg:py-2 hover:bg-gray-500 transition duration-300"
+                  className="text-xs lg:text-xs font-bold rounded-md inline-block bg-red-400 text-white px-2 py-1 lg:px-4 lg:py-2 hover:bg-gray-500 transition duration-300"
                   >
                   Shiko produktin
                 </Link>
